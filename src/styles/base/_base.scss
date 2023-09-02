@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: size(root);
+}
+
+#home {
+  background-color: color(dark-primary);
+  margin-top: size(space-lg);
+  border-radius: 1rem;
+  box-shadow: shadow(dark-primary), shadow(dark-secondary);
+}

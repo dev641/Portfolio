@@ -1,0 +1,9 @@
+.dark-background {
+  background-color: color(dark-primary);
+  color: darken($color: color(text-light-primary), $amount: opacity(1));
+}
+
+.light-background {
+  background-color: color(light-primary);
+  color: lighten($color: color(text-dark-primary), $amount: 15%);
+}

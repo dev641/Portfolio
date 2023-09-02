@@ -1,0 +1,45 @@
+{
+  "name": "portfoliowebsite",
+  "version": "1.0.0",
+  "description": "it is a portfolio website.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server",
+    "build": "webpack --config webpack.config.prod.js",
+    "build:scss": "webpack --mode production",
+    "watch": "webpack --mode development --watch"
+  },
+  "keywords": [
+    "typeSript",
+    "javascript"
+  ],
+  "author": "Devashish",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/lodash": "^4.14.197",
+    "@types/node": "^20.5.7",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.7.6",
+    "style-loader": "^3.3.3",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.2.2",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.1",
+    "css-loader": "^6.8.1",
+    "lodash": "^4.17.21",
+    "path": "^0.12.7",
+    "path-browserify": "^1.0.1",
+    "sass": "^1.66.1",
+    "sass-loader": "^13.3.2"
+  },
+  "browser": {
+    "fs": false
+  }
+}

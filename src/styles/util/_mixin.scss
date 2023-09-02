@@ -1,0 +1,20 @@
+@mixin flexHorizontal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@mixin flexVertical {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin lightFontSize {
+  font-family: family(primary), family(tertiary);
+  font-weight: 300;
+}
+
+@mixin regularFontSize {
+  font-family: family(primary), family(tertiary);
+  font-weight: 400;
+}

@@ -1,0 +1,15 @@
+{
+  "brand": {
+    "name": "Dev",
+    "href": "https://i0.wp.com/vssmn.org/wp-content/uploads/2018/12/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png?w=860&ssl=1"
+  },
+  "menu": [
+    { "name": "Home", "href": "home" },
+    { "name": "Experience", "href": "experience" },
+    { "name": "Experience", "href": "education" },
+    { "name": "Resume", "href": "resume" },
+    { "name": "Portfolio", "href": "portfolio" },
+    { "name": "Contact", "href": "contact" }
+  ],
+  "theme": "dark"
+}
