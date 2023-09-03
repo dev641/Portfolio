@@ -1,8 +1,7 @@
-import { HeaderModel } from "../model/HeaderModel";
-import { headerData } from "./menu";
+import { type HeaderData } from './menu'
 
-export type UpdateFileType = (path: string, key: string, value: string) => void;
+export type UpdateFileType = (path: string, key: string, value: string) => void
 
-export type ModelData = {
-  header: headerData;
-};
+export interface ModelData {
+  header: HeaderData
+}

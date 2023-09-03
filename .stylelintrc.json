@@ -1,0 +1,9 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "function-no-unknown": null,
+    "import-notation": null,
+    "no-empty-source": null,
+    "at-rule-no-unknown": null
+  }
+}
