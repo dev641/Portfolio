@@ -1,25 +1,19 @@
 #header {
   margin: calc(size(space-sm) / 2) calc(size(space-lg));
-
   #nav {
     @include flexHorizontal;
-
     justify-content: space-between;
-
     &-logo {
       @include flexHorizontal;
-
       font-size: size(sm);
       font-family: family(primary), family(tertiary);
       gap: size(sm);
-
       &__image {
         top: 2rem;
         width: calc(size(image-width));
         height: calc(size(image-width));
         outline: 3px solid color(text-dark-secondary);
         border-radius: 60%;
-
         &-icon {
           transform: translate(size(md), size(md));
         }
@@ -27,25 +21,25 @@
 
       &__name {
         @include regularFontSize;
+        // @include color(text-light-heading, 1);
+        // @extend .darkColor;
       }
     }
 
     &-container {
       @include flexHorizontal;
-
       &__list {
         @include flexHorizontal;
-
         font-size: calc(size(sm));
         list-style-type: none;
-
         &-item {
           padding: calc(size(space-sm));
-
+          // margin: size(space-xs);
+          // background-color: aqua;
           & > a {
             text-decoration: none;
+            // @include color(text-light-primary, 2);
             color: inherit;
-
             @include lightFontSize;
           }
         }
@@ -53,7 +47,6 @@
 
       &__theme {
         @include flexHorizontal;
-
         border-left: 3px solid color(text-dark-secondary);
         width: calc(size(image-width) / 1.2);
         height: calc(size(image-width) / 1.2);
@@ -62,18 +55,14 @@
         &-btn {
           padding: size(xs) size(sm);
         }
-
         .light-theme-btn {
           background-color: color(text-dark-secondary);
-
           .fa-solid {
             color: color(text-light-primary);
           }
         }
-
         .dark-theme-btn {
           background-color: color(light-primary);
-
           .fa-solid {
             color: color(text-dark-primary);
           }
