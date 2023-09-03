@@ -1,4 +1,4 @@
-import { ThemeEnum } from "../model/enum";
+import { ThemeEnum } from "../model/Enum";
 import { ControlThemeType, classList, headerData } from "../types/menu";
 import navGenerator from "./components/menu/menu";
 import View from "./view";

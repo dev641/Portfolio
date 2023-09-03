@@ -1,7 +1,7 @@
 import { brand, menu } from "../data/menu/menu.json";
 import { Item, ThemeType, headerData } from "../types/menu";
 import { Theme } from "./ThemeModel";
-import { ThemeEnum } from "./enum";
+import { ThemeEnum } from "./Enum";
 
 export class HeaderModel implements Theme {
   private brand: Item = {};
@@ -41,3 +41,5 @@ export class HeaderModel implements Theme {
     }
   };
 }
+
+export default new HeaderModel();

@@ -1,4 +1,4 @@
-import { ThemeEnum } from "./../../../model/enum";
+import { ThemeEnum } from "./../../../model/Enum";
 import type {
   headerData,
   headerGenerator,
