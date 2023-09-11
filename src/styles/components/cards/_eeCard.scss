@@ -14,13 +14,12 @@
     transform: translateX(-7rem);
     line-height: 2;
     &-top {
-      
       &__timeline {
-      font-size: size(xs);
-      background-color: lighten(color(text-dark-primary), opacity(2));
-      width: max-content;
-      padding:2px size(xs);
-      border-radius: size(brxl);
+        font-size: size(xs);
+        background-color: lighten(color(text-dark-primary), opacity(2));
+        width: max-content;
+        padding: 2px size(xs);
+        border-radius: size(brxl);
       }
 
       &__name {
@@ -29,18 +28,19 @@
     }
 
     &-bottom {
-      &__degree, &__designation {
-      font-size: size(sm);
-      font-weight:300;
-      width: max-content;
+      &__degree,
+      &__designation {
+        font-size: size(sm);
+        font-weight: 300;
+        width: max-content;
       }
 
-      &__cgpa, &__skillset {
+      &__cgpa,
+      &__skillset {
         font-size: size(xs);
-        font-weight:300;
+        font-weight: 300;
         opacity: 0.75;
       }
-
     }
   }
 
@@ -57,16 +57,6 @@
   }
 
   &:hover {
-    // color: inherit;
-    
-    // @include cardHover(none, 0) {
-    //   background: inherit;
-    //   & .btn {
-    //   background: inherit;
-    //   box-shadow: inherit;
-    //   color: color(text-red-primary);
-    // }
-    // }
     @include disableHover;
   }
 }
