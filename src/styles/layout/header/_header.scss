@@ -1,6 +1,5 @@
 #header {
   margin: calc(size(space-sm) / 2) calc(size(space-lg));
-
   #nav {
     @include flexHorizontal;
 
@@ -53,18 +52,20 @@
 
       &__theme {
         @include flexHorizontal;
-
-        border-left: 3px solid color(text-dark-secondary);
+        
+        border-left: 3px solid lighten($color: color(text-dark-secondary), $amount: opacity(1));
         width: calc(size(image-width) / 1.2);
         height: calc(size(image-width) / 1.2);
         padding: size(space-xs) size(space-sm);
 
         &-btn {
           padding: size(xs) size(sm);
+          border-radius: calc(size(xs)/2);
+          border: none;
         }
 
         .light-theme-btn {
-          background-color: color(text-dark-secondary);
+          background-color: lighten($color: color(text-dark-secondary), $amount: opacity(0));
 
           .fa-solid {
             color: color(text-light-primary);

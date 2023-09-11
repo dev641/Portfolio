@@ -1,0 +1,16 @@
+#cv-card {
+  grid-template-columns: 20% 80%;
+  row-gap: 2rem;
+  &__heading {
+    font-size: size(sm);
+    font-weight: 300;
+    grid-column: 1/-1;
+  }
+  & .btn{
+    width: max-content;
+    padding: size(xs) size(md);
+  }
+  &:hover {
+    @include disableHover;
+  }
+}

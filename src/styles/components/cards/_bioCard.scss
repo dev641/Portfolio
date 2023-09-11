@@ -1,0 +1,51 @@
+#bio-card {
+  display: flex;
+  flex-direction: column;
+  gap: size(space-xs);
+  &__icon {
+    background-color: color(text-red-tertiary);
+    width: max-content;
+    padding: size(xs);
+    border-radius: 50%;
+
+    &-inner {
+    background-color: color(text-red-primary);
+    width: max-content;
+    padding:size(xs) size(md);
+    border-radius: 50%;
+
+      & i {
+        width: max-content;
+        color: color(text-light-primary);
+        font-size: calc(size(p2xl) * 3);
+        -webkit-text-stroke: 1px;
+      }
+    }
+  }
+
+  &__heading {
+    font-size: size(h3);
+
+    & span {
+      color: color(text-red-primary);
+    }
+  }
+
+  &__description {
+    font-size: size(sm);
+  }
+
+  &__details {
+    font-size: size(sm);
+
+    &-row__logo i {
+     color: color(text-red-primary);
+     font-size: calc(size(p2xl) * 1.4);
+     -webkit-text-stroke: 1px;
+    }
+  }
+
+  &:hover {
+    @include disableHover;
+  }
+}

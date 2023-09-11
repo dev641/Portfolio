@@ -5,3 +5,4 @@ import { PortfolioView } from './view/PortfolioView'
 
 // eslint-disable-next-line no-new
 new Portfolio(PortfolioModel, new PortfolioView(PortfolioModel.Data))
+// eslint-disable-next-line @typescript-eslint/strict-boolean-expressions

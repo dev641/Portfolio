@@ -1,6 +1,7 @@
 /* eslint-disable new-cap */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path')
+const webpack = require('webpack')
 // const cleanPlugin = require('clean-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
 const StylelintPlugin = require('stylelint-webpack-plugin')
@@ -12,9 +13,10 @@ module.exports = {
   mode: 'production',
   entry: './src/app.ts',
   devServer: {
+    liveReload: true,
     static: [
       {
-        directory: path.join(__dirname)
+        directory: path.join(__dirname, 'public')
       }
     ]
   },
@@ -41,7 +43,7 @@ module.exports = {
       }
     ]
   },
-  // target: "node",
+  target: 'web',
   resolve: {
     extensions: ['.ts', '.js']
   },
@@ -68,6 +70,7 @@ module.exports = {
     // new CopyWebpackPlugin({
     //   patterns: [{ from: "./app.css", to: "app.css" }],
     // }),
+    new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({
       filename: 'app.css'
     })

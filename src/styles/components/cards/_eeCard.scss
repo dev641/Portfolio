@@ -1,0 +1,72 @@
+#eecard {
+  grid-template-columns: 30% 50% 20%;
+  justify-content: space-between;
+  padding: size(space-xs);
+  &__img {
+    width: size(plg);
+    border-radius: size(brxs);
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transform: translateX(-7rem);
+    line-height: 2;
+    &-top {
+      
+      &__timeline {
+      font-size: size(xs);
+      background-color: lighten(color(text-dark-primary), opacity(2));
+      width: max-content;
+      padding:2px size(xs);
+      border-radius: size(brxl);
+      }
+
+      &__name {
+        font-size: size(md);
+      }
+    }
+
+    &-bottom {
+      &__degree, &__designation {
+      font-size: size(sm);
+      font-weight:300;
+      width: max-content;
+      }
+
+      &__cgpa, &__skillset {
+        font-size: size(xs);
+        font-weight:300;
+        opacity: 0.75;
+      }
+
+    }
+  }
+
+  &__btn {
+    width: max-content;
+    height: max-content;
+    justify-self: end;
+    align-self: center;
+    padding: size(xs) size(md);
+    font-size: size(xs);
+    transform: translate(calc(size(xl) * -1), calc(size(xs) * -1));
+    color: color(text-red-primary);
+    font-weight: 500;
+  }
+
+  &:hover {
+    // color: inherit;
+    
+    // @include cardHover(none, 0) {
+    //   background: inherit;
+    //   & .btn {
+    //   background: inherit;
+    //   box-shadow: inherit;
+    //   color: color(text-red-primary);
+    // }
+    // }
+    @include disableHover;
+  }
+}

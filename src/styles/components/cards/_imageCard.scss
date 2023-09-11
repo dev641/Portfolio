@@ -1,0 +1,18 @@
+#home {
+  margin-top: size(space-lg);
+  border-radius: 1rem;
+  display: block;
+  padding: 2rem;
+
+}
+
+#image-card{
+  & img{
+    width: size(p2xl);
+    border-radius: size(brxs);
+  }
+
+  &:hover {
+    @include disableHover;
+  }
+}

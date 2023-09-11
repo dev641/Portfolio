@@ -1,0 +1,37 @@
+#portfolio-card {
+  grid-template-columns: repeat(2, size(pmd));
+  &__image {
+    grid-column: 1/-1;
+    overflow: hidden;
+    border-radius: size(brxs);
+    margin-bottom: size(space-xs);
+    img{
+    width: size(p2xl);
+    border-radius: size(brxs);
+    transition: transform 0.4s;
+  }
+  }
+  &__main-skill {
+    font-size: calc(size(p2xl)* 2);
+    color: color(text-red-primary);
+    font-weight:500;
+  }
+  &__likes {
+    justify-self: flex-end;
+    font-size: calc(size(p2xl)* 2);
+    display: flex;
+    gap: size(xs);
+  }
+  &__heading {
+    margin-top: size(space-xs);
+    font-size: calc(size(p2xl)* 5);
+  }
+
+  &:hover {
+    @include cardHover() {
+      & img {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

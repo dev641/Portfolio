@@ -2,13 +2,14 @@ $colors: (
   dark-primary: #212428,
   light-primary: #f4f5f6,
   text-light-heading: #fbfbfb,
-  text-light-primary: #fff,
+  text-light-primary: #c4cfde,
   text-light-secondary: #c0c1c4,
   text-dark-heading: #0e0e10,
   text-dark-primary: #262626,
   text-dark-secondary: #3b3d40,
   text-red-primary: #ff014f,
   text-red-secondary: #f9004d,
+  text-red-tertiary: #f9034f42,
   facebook: #3b5997,
   twitter: #1ba1f2,
   youtube: #ed4141,
@@ -31,6 +32,17 @@ $sizes: (
   md: 2rem,
   lg: 2.4rem,
   xl: 2.8rem,
+  pxs: 25%,
+  psm: 33%,
+  pmd: 50%,
+  plg: 67%,
+  pxl: 75%,
+  p2xl: 100%,
+  brxs: 1rem,
+  brsm: 2rem,
+  brmd: 4rem,
+  brlg: 8rem,
+  brxl: 12rem,
   h1: 7rem,
   h2: 6rem,
   h3: 5rem,
@@ -45,6 +57,11 @@ $sizes: (
   space-2xl: 10.4rem,
   image-height: 7rem,
   image-width: 7rem,
+  border-xs: 1px,
+  border-sm: 2px,
+  border-md: 3px,
+  border-lg: 4px,
+  border-xl: 5px
 );
 
 $opacity: (
@@ -65,6 +82,10 @@ $shadows: (
 
 $gradients: (
   red-hover: linear-gradient(145deg, #ff014f, #d11414),
+  red-hover-btn: linear-gradient(145deg,#ff014f,#f9004d),
+  black: linear-gradient(145deg, #22262a, #23272b),
+  white: linear-gradient(145deg, #e2e8ec, #fff),
+  black-hover: linear-gradient(145deg, #26282f,#0f0f0f, #262a2e)
 );
 
 $dark: #000;
@@ -97,4 +118,8 @@ $font-family: (
 
 @function theme($theme-name) {
   @return map-get($map: $theme, $key: $theme-name);
+}
+
+@function gredient($gredient-name) {
+  @return map-get($map: $gradients, $key: $gredient-name);
 }

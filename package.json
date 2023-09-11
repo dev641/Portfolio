@@ -6,12 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server",
+    "start:live": "live-server",
     "build": "webpack --config webpack.config.prod.js",
     "build:scss": "webpack --mode production",
     "watch": "webpack --mode development --watch",
     "lint:fix": "eslint --fix .",
     "lint:styles": "stylelint '**/*.{css,scss}' ",
-   "watch:styles": "onchange '**/*.{css,scss}' -- npm run lint:styles"
+    "watch:styles": "onchange '**/*.{css,scss}' -- npm run lint:styles"
   },
   "keywords": [
     "typeSript",
@@ -44,11 +45,13 @@
     "typescript": "^5.2.2",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1"
+    "webpack-dev-server": "^4.15.1",
+    "webpack-hot-middleware": "^2.25.4"
   },
   "dependencies": {
     "concurrently": "^8.2.1",
     "css-loader": "^6.8.1",
+    "live-server": "^1.2.2",
     "lodash": "^4.17.21",
     "onchange": "^7.1.0",
     "path": "^0.12.7",

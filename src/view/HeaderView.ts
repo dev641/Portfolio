@@ -33,6 +33,7 @@ export class HeaderView extends View<HTMLDivElement> {
     const curTheme = data.theme === ThemeEnum.dark ? 'dark' : 'light'
     const themeBtnClassGenerator = themeClassGenerator()
     const themeBackgroundGenerator = themeClassGenerator()
+    const themeCardGenerator = themeClassGenerator()
     const themeUpdator: (element: HTMLElement, classList: classList) => void = (
       element,
       { current, prev }
@@ -40,7 +41,10 @@ export class HeaderView extends View<HTMLDivElement> {
       element.classList.remove(prev)
       element.classList.add(current)
     }
-
+    const cards = document.querySelectorAll('.card')
+    cards.forEach((card) => {
+      themeUpdator(card as HTMLDivElement, themeCardGenerator('card'))
+    })
     themeUpdator(this.themeElement, themeBtnClassGenerator('theme-btn'))
     themeUpdator(document.body, themeBackgroundGenerator('background'))
     this.themeElement.dataset.theme = curTheme

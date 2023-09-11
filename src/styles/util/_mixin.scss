@@ -18,3 +18,43 @@
   font-family: family(primary), family(tertiary);
   font-weight: 400;
 }
+
+@mixin box-shadow {
+  box-shadow: inherit;
+}
+
+@mixin card($gradient, $shadow1, $shadow2) {
+  border-radius: size(brxs);
+  padding: size(space-md);
+  margin: calc(size(pxs) / 5);
+  display: grid;
+  background: gredient($gradient);
+  box-shadow: shadow($shadow1), shadow($shadow2);
+  transition: background 0.4s, transform 0.4s;
+  color: inherit;
+}
+
+@mixin cardHover(
+  $background: linear-gradient(145deg, #22262a, #23272b),
+  $translate: 0
+) {
+  background: gredient($background);
+  transform: translateY($translate);
+  @content;
+}
+
+@mixin disableHover {
+  color: inherit;
+
+  @include cardHover(none, 0) {
+    background: inherit;
+    & .btn {
+      background: inherit;
+      box-shadow: inherit;
+      color: color(text-red-primary);
+    }
+    & img {
+      overflow: hidden;
+    }
+  }
+}
