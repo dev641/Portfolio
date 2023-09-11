@@ -17,11 +17,6 @@ export type ThemeGenerator = (theme: ThemeType) => string
 export type ControlThemeType = (theme: ThemeType) => void
 
 // Header
-export type HeaderData = {
-  brand: Item
-  menu: Item[]
-} & { theme: ThemeType }
-
 export type HeaderGenerator = (items: headerData) => string
 
 export interface classList { current: string, prev: string }

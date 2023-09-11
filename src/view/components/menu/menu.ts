@@ -3,10 +3,11 @@ import {
   type HeaderGenerator,
   type ItemGenerator
   ,
-  type HeaderData,
   type Item,
   type ThemeGenerator
 } from '../../../types/menu'
+
+import { type HeaderData } from '../../../types/Model'
 const itemGenerator: ItemGenerator = (items) => {
   return Array.isArray(items)
     ? items

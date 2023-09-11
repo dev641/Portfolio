@@ -1,4 +1,4 @@
-import { type ModelData } from '../types/util'
+import { type ModelData } from '../types/Model'
 import Header, { type HeaderModel } from './HeaderModel'
 
 export class PortfolioModel {

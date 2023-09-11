@@ -1,4 +1,4 @@
-import { type HeaderData } from '../types/menu'
+import { type HeaderData } from '../types/Model'
 
 export default abstract class View<T extends HTMLElement> {
   protected parentElement: T

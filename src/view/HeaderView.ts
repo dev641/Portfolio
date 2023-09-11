@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { ThemeEnum } from '../model/Enum'
-import { type ControlThemeType, type classList, type HeaderData } from '../types/menu'
+import { type ControlThemeType, type classList } from '../types/menu'
+import { type HeaderData } from '../types/Model'
 import navGenerator from './components/menu/menu'
 import View from './view'
 export class HeaderView extends View<HTMLDivElement> {

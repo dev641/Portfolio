@@ -1,5 +1,5 @@
 import { HeaderView } from './HeaderView'
-import { type ModelData } from '../types/util'
+import { type ModelData } from '../types/Model'
 export class PortfolioView {
   private readonly headerView: HeaderView
   constructor (data: ModelData) {
