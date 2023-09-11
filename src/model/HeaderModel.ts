@@ -1,44 +1,22 @@
 import { brand, menu } from '../data/menu/menu.json'
-import { type Item, type ThemeType, type HeaderData } from '../types/menu'
+import { type ThemeType, type HeaderData } from '../types/menu'
 import { type Theme } from './ThemeModel'
 import { ThemeEnum } from './Enum'
+import Model from './Model'
 
-export class HeaderModel implements Theme {
-  private readonly brand: Item = {}
-  private readonly menu: Item[] = []
-  private theme: ThemeType
+export class HeaderModel extends Model<HeaderData> implements Theme {
   constructor () {
-    this.brand = brand
-    this.menu = menu
-    this.theme = ThemeEnum.dark
-  }
-
-  get Theme (): ThemeType {
-    return this.theme
-  }
-
-  get Brand (): Item {
-    return this.brand
-  }
-
-  get Menu (): Item[] {
-    return this.menu
-  }
-
-  get Data (): HeaderData {
-    const brand = this.Brand
-    const menu = this.Menu
-    const theme = this.Theme
-    return {
+    const headerData: HeaderData = {
       brand,
       menu,
-      theme
+      theme: ThemeEnum.dark
     }
+    super(headerData)
   }
 
   changeTheme = (theme: ThemeType): void => {
-    if (this.theme !== theme) {
-      this.theme = theme
+    if (this.Data.theme !== theme) {
+      this.Data.theme = theme
     }
   }
 }
