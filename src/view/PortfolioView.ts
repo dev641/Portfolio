@@ -1,12 +1,19 @@
 import { HeaderView } from './HeaderView'
 import { type ModelData } from '../types/Model'
+import { HomeView } from './HomeView'
 export class PortfolioView {
-  private readonly headerView: HeaderView
+  private readonly header: HeaderView
+  private readonly home: HomeView
   constructor (data: ModelData) {
-    this.headerView = new HeaderView(data.header)
+    this.header = new HeaderView(data.header)
+    this.home = new HomeView(data.home)
   }
 
-  get HeaderView (): HeaderView {
-    return this.headerView
+  get Header (): HeaderView {
+    return this.header
+  }
+
+  get Home (): HomeView {
+    return this.home
   }
 }

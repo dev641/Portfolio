@@ -1,11 +1,11 @@
 import { ThemeEnum } from './../../../model/Enum'
 import {
-  type HeaderGenerator,
+  type HtmlGenerator,
   type ItemGenerator
   ,
   type Item,
   type ThemeGenerator
-} from '../../../types/menu'
+} from '../../../types/util'
 
 import { type HeaderData } from '../../../types/Model'
 const itemGenerator: ItemGenerator = (items) => {
@@ -36,7 +36,7 @@ const themeGenerator: ThemeGenerator = (theme) => {
     </div>
   `
 }
-const headerGenerator: HeaderGenerator = ({
+const headerGenerator: HtmlGenerator = ({
   brand,
   menu,
   theme

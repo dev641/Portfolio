@@ -1,6 +1,8 @@
 #cv-card {
+  height: fit-content;
   grid-template-columns: 20% 80%;
-  row-gap: 2rem;
+  row-gap: size(space-xs);
+  column-gap: size(space-md);
   &__heading {
     font-size: size(sm);
     font-weight: 300;
@@ -8,8 +10,10 @@
   }
   & .btn{
     width: max-content;
+    height: fit-content;
     padding: size(xs) size(md);
   }
+
   &:hover {
     @include disableHover;
   }

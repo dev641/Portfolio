@@ -25,8 +25,8 @@
 
 @mixin card($gradient, $shadow1, $shadow2) {
   border-radius: size(brxs);
-  padding: size(space-md);
-  margin: calc(size(pxs) / 5);
+  padding: size(space-sm);
+  margin: calc(size(pxs) / 12.5);
   display: grid;
   background: gredient($gradient);
   box-shadow: shadow($shadow1), shadow($shadow2);

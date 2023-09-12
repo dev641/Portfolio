@@ -1,0 +1,8 @@
+#home {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  & #image-card {
+    grid-row: 1;
+    grid-column: 2;
+  }
+}

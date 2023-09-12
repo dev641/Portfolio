@@ -1,0 +1,41 @@
+{
+  "bio": {
+    "logo": {
+      "logoClass": ["bi", "bi-person"],
+      "name": "user"
+    },
+    "name": "DevAshish",
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur nam tempora assumenda accusamus, ",
+    "info": {
+      "designation": {
+        "logoClass": ["bi", "bi-file-earmark"],
+        "name": "Software Engineer"
+      },
+      "email": {
+        "logoClass": ["bi", "bi-envelope"],
+        "name": "devashish.01.01.01@gmail.com"
+      },
+      "location": {
+        "logoClass": ["bi", "bi-geo-alt"],
+        "name": "Bengaluru, India"
+      }
+    }
+  },
+  "CV": {
+    "heading":"Heading",
+    "download": {
+      "name": "Download",
+      "src": "src"
+    },
+    "contact": {
+      "name": "Contact",
+      "src": "#contact"
+    }
+  },
+  "image": {
+    "image": {
+      "name": "Main-image",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"
+    }
+  }
+}

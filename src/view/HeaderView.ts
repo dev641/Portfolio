@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { ThemeEnum } from '../model/Enum'
-import { type ControlThemeType, type classList } from '../types/menu'
+import { type ControlThemeType, type classList } from '../types/util'
 import { type HeaderData } from '../types/Model'
 import navGenerator from './components/menu/menu'
 import View from './view'
-export class HeaderView extends View<HTMLDivElement> {
+export class HeaderView extends View<HTMLDivElement, HeaderData> {
   private readonly themeElement: HTMLButtonElement
   constructor (data: HeaderData) {
     super('header')

@@ -1,17 +1,16 @@
-import { type ControlThemeType } from './../types/menu.d'
+import { type ControlThemeType } from './../types/util'
 import { type HeaderView } from '../view/HeaderView'
 import { type HeaderModel } from '../model/HeaderModel'
-export class HeaderController {
-  private readonly headerModel: HeaderModel
-  private readonly headerView: HeaderView
+import { Controller } from './Controller'
+import { type HeaderData } from '../types/Model'
+export class HeaderController extends Controller<HeaderModel, HeaderView, HeaderData, HTMLDivElement> {
   constructor (headerModel: HeaderModel, headerView: HeaderView) {
-    this.headerModel = headerModel
-    this.headerView = headerView
-    this.headerView.changeTheme(this.controlTheme.bind(this))
+    super(headerModel, headerView)
+    this.view.changeTheme(this.controlTheme.bind(this))
   }
 
   controlTheme: ControlThemeType = (theme) => {
-    this.headerModel.changeTheme(theme)
-    this.headerView.update(this.headerModel.Data)
+    this.model.changeTheme(theme)
+    this.view.update(this.model.Data)
   }
 }

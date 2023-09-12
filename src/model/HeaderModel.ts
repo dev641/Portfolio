@@ -1,5 +1,5 @@
 import { brand, menu } from '../data/menu/menu.json'
-import { type ThemeType } from '../types/menu'
+import { type ThemeType } from '../types/util'
 import { type HeaderData } from '../types/Model'
 import { type Theme } from './ThemeModel'
 import { ThemeEnum } from './Enum'
