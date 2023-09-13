@@ -1,7 +1,7 @@
 #bio-card {
   display: flex;
   flex-direction: column;
-  gap: size(md);
+  gap: size(xs);
   height: fit-content;
   &__icon {
     background-color: color(text-red-tertiary);
@@ -12,20 +12,20 @@
     &-inner {
     background-color: color(text-red-primary);
     width: max-content;
-    padding:size(xs) size(sm);
+    padding:calc(size(xs) / 4) size(xs) ;
     border-radius: 50%;
 
       & i {
         width: max-content;
         color: color(text-light-primary);
-        font-size: calc(size(p2xl)*2);
-        -webkit-text-stroke: 1px;
+        font-size: calc(size(p2xl)*3);
+        // -webkit-text-stroke: 1px;
       }
     }
   }
 
   &__heading {
-    font-size: size(h5);
+    font-size: size(h4);
     color: #fff;
 
     & span {
@@ -35,6 +35,11 @@
 
   &__description {
     font-size: size(xs);
+    font-weight: 400;
+    & span {
+      color: color(text-red-primary);
+      font-weight: 500;
+    }
   }
 
   &__details {
@@ -43,7 +48,7 @@
     &-row__logo i {
      color: color(text-red-primary);
      font-size: calc(size(p2xl) * 1.4);
-     -webkit-text-stroke: 1px;
+    //  -webkit-text-stroke: 2px;
     }
   }
 

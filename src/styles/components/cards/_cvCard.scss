@@ -2,7 +2,7 @@
   height: fit-content;
   grid-template-columns: 20% 80%;
   row-gap: size(space-xs);
-  column-gap: size(space-md);
+  column-gap: size(space-lg);
   &__heading {
     font-size: size(sm);
     font-weight: 300;
@@ -12,6 +12,11 @@
     width: max-content;
     height: fit-content;
     padding: size(xs) size(md);
+    text-decoration: none;
+    transition: background 0.4s, transform 0.4s;
+    &:hover {
+      @include cardHover(black-hover, -1rem)
+    }
   }
 
   &:hover {

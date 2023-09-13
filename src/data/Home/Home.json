@@ -5,7 +5,7 @@
       "name": "user"
     },
     "name": "DevAshish",
-    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur nam tempora assumenda accusamus, ",
+    "description": "Software Engineer working for <span>Target Corporation</span> in Bengaluru, India.",
     "info": {
       "designation": {
         "logoClass": ["bi", "bi-file-earmark"],
@@ -22,13 +22,14 @@
     }
   },
   "CV": {
-    "heading":"Heading",
+    "heading":"Download my curriculum vitae:",
     "download": {
-      "name": "Download",
-      "src": "src"
+      "name": "Download CV",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png",
+      "extension": "Image_created_with_a_mobile_phone.png"
     },
     "contact": {
-      "name": "Contact",
+      "name": "Contact Me",
       "src": "#contact"
     }
   },

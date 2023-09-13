@@ -22,6 +22,9 @@ interface Logo {
   name?: string | number
 }
 
+type Download = {
+  extension: string
+} & Link
 interface Date {
   month: number | string
   year: number
@@ -40,7 +43,7 @@ export interface BioCard {
 
 export interface CvCard {
   heading: string
-  download: Link
+  download: Download
   contact: Link
 }
 

@@ -11,55 +11,7 @@ html {
   font-size: size(root);
 }
 
-.dark-background {
-  background-color: color(dark-primary);
-  color: darken($color: color(text-light-primary), $amount: 5%);
-}
-
-.light-background {
-  background-color: color(light-primary);
-  color: lighten($color: color(text-dark-primary), $amount: 5%);
-}
-
-.dark-card {
-  @include card(black,dark-primary,dark-secondary);
-
-  & .heading {
-    color: darken($color: color(text-light-primary), $amount: 0%);
-  }
-
-  & .btn {
-    background: inherit;
-    box-shadow: inherit;
-    border-radius: calc(size(brxs) / 2);
-    color: color(text-red-primary);
-  }
-
-  &:hover {
-    @include cardHover(black-hover, -1rem);
-  }
-}
-
-.light-card {
-  @include card(white,light-primary,light-secondary);
-
-  & .btn {
-    background: inherit;
-    box-shadow: inherit;
-    border-radius: calc(size(brxs) / 2);
-    color: color(text-red-primary);
-  }
-
-  &:hover {
-    color: color(light-primary);
-
-    & .btn {
-      background: gredient(red-hover-btn);
-      box-shadow: none;
-      color: inherit;
-    }
-
-    
-    @include cardHover(red-hover, -1rem);
-  }
+#container {
+  width: calc(size(pxl) + size(p2xs));
+  margin:size(space-xl) auto;
 }

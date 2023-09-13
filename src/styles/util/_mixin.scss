@@ -34,10 +34,7 @@
   color: inherit;
 }
 
-@mixin cardHover(
-  $background: linear-gradient(145deg, #22262a, #23272b),
-  $translate: 0
-) {
+@mixin cardHover($background: black-hover, $translate: 0) {
   background: gredient($background);
   transform: translateY($translate);
   @content;
