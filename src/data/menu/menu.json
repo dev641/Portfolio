@@ -6,7 +6,7 @@
   "menu": [
     { "name": "Home", "href": "home" },
     { "name": "Experience", "href": "experience" },
-    { "name": "Experience", "href": "education" },
+    { "name": "Education", "href": "education" },
     { "name": "Resume", "href": "resume" },
     { "name": "Portfolio", "href": "portfolio" },
     { "name": "Contact", "href": "contact" }
