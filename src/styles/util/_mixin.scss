@@ -57,7 +57,6 @@
 }
 
 @mixin section-break($color) {
-  // height: 1px;
   margin-top: size(space-2xl);
   border: 1px solid color($color);
   border-top: 0;

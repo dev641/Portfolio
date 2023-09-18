@@ -13,9 +13,9 @@ html {
 
 #container {
   @include flexVertical;
+  
   gap: size(space-2xl);
   width: calc(size(space-2xl)* 12);
-  // width: fit-content;
   margin:size(space-xl) auto;
 }
 
