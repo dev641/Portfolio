@@ -6,7 +6,7 @@
 
 @mixin flexVertical {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 @mixin lightFontSize {
