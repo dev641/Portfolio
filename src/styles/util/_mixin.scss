@@ -55,3 +55,11 @@
     }
   }
 }
+
+@mixin section-break($color) {
+  // height: 1px;
+  margin-top: 10rem;
+  border: 1px solid color($color);
+  border-top: 0;
+  grid-column: 1/-1;
+}
