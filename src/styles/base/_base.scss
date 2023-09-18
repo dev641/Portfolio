@@ -12,6 +12,28 @@ html {
 }
 
 #container {
-  width: calc(size(pxl) + size(p2xs));
+  // width: calc(size(pxl) + size(p2xs));
+  width: calc(size(space-2xl)* 12);
+  // width: fit-content;
   margin:size(space-xl) auto;
+}
+
+.dark-background {
+  .section-break {
+  // height: 1px;
+  margin-top: 10rem;
+  border: 1px solid color(dark-border);
+  border-top: 0;
+  grid-column: 1/-1;
+}
+}
+
+.light-background {
+  .section-break {
+  // height: 1px;
+  margin-top: 10rem;
+  border: 1px solid color(light-border);
+  border-top: 0;
+  grid-column: 1/-1;
+}
 }

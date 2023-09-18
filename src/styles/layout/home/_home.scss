@@ -1,6 +1,6 @@
 #home {
   display: grid;
-  grid-template-columns: 45%;
+  grid-template-columns: 4fr 5fr;
   & #image-card {
     grid-row: 1/ span 2;
     grid-column: 2;

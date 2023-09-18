@@ -20,6 +20,7 @@ export class HomeView extends View<HTMLDivElement, HomeData> {
   render (data: HomeData): void {
     const html = this.homeGenerator(data)
     this.parentElement.insertAdjacentHTML('afterbegin', html)
+    this.renderSectionBreak()
   }
 
   // update (data: HomeData): void {

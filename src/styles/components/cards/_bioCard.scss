@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: size(xs);
   height: fit-content;
+  width: fit-content;
   &__icon {
     background-color: color(text-red-tertiary);
     width: max-content;
