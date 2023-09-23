@@ -1,0 +1,102 @@
+{
+  "subHeading": "Bachelor",
+  "heading": "My Education",
+  "education":[
+    {
+      "kind": "Institute",
+      "image": {
+        "name": "image1",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"
+      },
+      "timeLine": {
+        "start": {
+          "month": "Aug",
+          "year": 2022
+        },
+        "end": "Present"
+      },
+      "name": "Heading",
+      "btn": {
+        "name": "btn-name",
+        "src": "src"
+      },
+      "location": "Bengaluru, India",
+      "description": "Software Engineer working for <span>Target Corporation</span> in Bengaluru, India.",
+      "degree":{
+        "degree": "Bachelor's of Engineering",
+        "stream": "Computer Science And Engineering"
+      },
+      "cgpa":{
+        "cgpa": 8.02,
+        "total": 10
+      },
+      "courses": [
+        "DSA", "OS","Computer Networks"
+      ]
+    },
+    {
+      "kind": "Institute",
+      "image": {
+        "name": "image1",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"
+      },
+      "timeLine": {
+        "start": {
+          "month": "Aug",
+          "year": 2022
+        },
+        "end": "Present"
+      },
+      "name": "Heading",
+      "btn": {
+        "name": "btn-name",
+        "src": "src"
+      },
+      "location": "Bengaluru, India",
+      "description": "Software Engineer working for <span>Target Corporation</span> in Bengaluru, India.",
+      "degree":{
+        "degree": "Bachelor's of Engineering",
+        "stream": "Computer Science And Engineering"
+      },
+      "cgpa":{
+        "cgpa": 8.02,
+        "total": 10
+      },
+      "courses": [
+        "DSA", "OS","Computer Networks"
+      ]
+    },
+    {
+      "kind": "Institute",
+      "image": {
+        "name": "image1",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"
+      },
+      "timeLine": {
+        "start": {
+          "month": "Aug",
+          "year": 2022
+        },
+        "end": "Present"
+      },
+      "name": "Heading",
+      "btn": {
+        "name": "btn-name",
+        "src": "src"
+      },
+      "location": "Bengaluru, India",
+      "description": "Software Engineer working for <span>Target Corporation</span> in Bengaluru, India.",
+      "degree":{
+        "degree": "Bachelor's of Engineering",
+        "stream": "Computer Science And Engineering"
+      },
+      "cgpa":{
+        "cgpa": 8.02,
+        "total": 10
+      },
+      "courses": [
+        "DSA", "OS","Computer Networks"
+      ]
+    }
+  ]
+}

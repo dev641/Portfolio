@@ -9,6 +9,6 @@ export default abstract class View<T extends HTMLElement, U> {
   // abstract update (data: U): void
   renderSectionBreak (): void {
     const hr: string = '<hr class="section-break">'
-    this.parentElement.insertAdjacentHTML('beforeend', hr)
+    this.parentElement.insertAdjacentHTML('afterend', hr)
   }
 }

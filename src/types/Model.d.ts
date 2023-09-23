@@ -1,4 +1,4 @@
-import { type BioCard, type CvCard, type ImageCard } from './cards'
+import { type UserDetails, type BioCard, type CvCard, type ImageCard } from './cards'
 
 export type HeaderData = {
   brand: Item
@@ -10,12 +10,20 @@ export interface HomeData {
   CV: CvCard
   image: ImageCard
 }
+
+export interface ExperienceData {
+  subHeading: string
+  heading: string
+  experience: UserDetails[]
+}
+export interface EducationData {
+  subHeading: string
+  heading: string
+  education: UserDetails[]
+}
 export interface ModelData {
   header: HeaderData
   home: HomeData
-  // home: {
-  //   Bio: BioCard
-  //   CV: CvCard
-  //   Image: ImageCard
-  // }
+  experience: ExperienceData
+  education: EducationData
 }

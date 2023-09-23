@@ -57,8 +57,13 @@
 }
 
 @mixin section-break($color) {
-  margin-top: size(space-2xl);
   border: 1px solid color($color);
   border-top: 0;
   grid-column: 1/-1;
+}
+
+@mixin eecard {
+  display: grid;
+  // gap: size(xs);
+  justify-items: center;
 }

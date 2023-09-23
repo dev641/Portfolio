@@ -3,12 +3,11 @@ import Model from './Model'
 import { bio, CV, image } from '../data/Home/Home.json'
 export class HomeModel extends Model<HomeData> {
   constructor () {
-    const homeData: HomeData = {
+    super({
       bio,
       CV,
       image
-    }
-    super(homeData)
+    } satisfies HomeData)
   }
 }
 

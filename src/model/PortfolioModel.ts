@@ -2,19 +2,31 @@ import Home, { type HomeModel } from './HomeModel'
 import { type ModelData } from '../types/Model'
 import Header, { type HeaderModel } from './HeaderModel'
 import Model from './Model'
+import Education, { type EducationModel } from './EducationModel'
+import Experience, { type ExperienceModel } from './ExperienceModel'
 
 export class PortfolioModel extends Model<ModelData> {
   private readonly header: HeaderModel
   private readonly home: HomeModel
+  private readonly experience: ExperienceModel
+  private readonly education: EducationModel
   constructor () {
     const header = Header.Data
     const home = Home.Data
+    const experience = Experience.Data
+    const education = Education.Data
+    // const  = .Data
+    // const home = Home.Data
     super({
       header,
-      home
+      home,
+      experience,
+      education
     })
     this.header = Header
     this.home = Home
+    this.experience = Experience
+    this.education = Education
   }
 
   get Header (): HeaderModel {
@@ -23,6 +35,14 @@ export class PortfolioModel extends Model<ModelData> {
 
   get Home (): HomeModel {
     return this.home
+  }
+
+  get Experience (): ExperienceModel {
+    return this.experience
+  }
+
+  get Education (): EducationModel {
+    return this.education
   }
 }
 

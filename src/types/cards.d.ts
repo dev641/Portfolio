@@ -9,6 +9,8 @@ export interface ImageCard {
 
 export type render = (data: T) => string
 
+export type renderSection = (id: string, data: T) => string
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function isEmail (input: string): input is Email {
   // Regular expression to validate an email address format
@@ -99,4 +101,8 @@ export interface PortfolioExpandCard {
   project: { link: Link, logo: Logo }
   likeBtn: Logo
   close: Logo
+}
+export interface SectionContainer {
+  heading: string
+  subHeading: string
 }

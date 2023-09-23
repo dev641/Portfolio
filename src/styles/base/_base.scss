@@ -20,13 +20,41 @@ html {
 }
 
 .dark-background {
+  .bio-card__heading span {
+    color: color(text-red-primary);
+  }
+  .eecard__description-top__timeline {
+    background-color: lighten(color(text-dark-primary), opacity(2));
+  }
   .section-break {
      @include section-break(dark-border);
 }
 }
 
 .light-background {
+  .bio-card__heading{
+    color: color(text-dark-secondary);
+    & span {
+      color: color(text-red-primary);
+    }
+  }
+  .eecard__description-top__timeline {
+    background-color: lighten(color(text-red-primary), 10%);
+    color: color(text-light-heading)
+  }
   .section-break {
      @include section-break(light-border);
   }
+}
+
+main section {
+  & .heading{
+    font-size: size(h4);
+    margin-bottom: size(space-lg);
+  }
+  & .subHeading {
+    font-size: size(sm);
+    color: color(text-red-primary);
+  }
+
 }
