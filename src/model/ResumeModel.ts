@@ -1,6 +1,6 @@
 import { type ResumeData } from '../types/Model'
 import Model from './Model'
-import { heading, subHeading, education, experience, btns } from '../data/Resume/Resume.json'
+import { heading, subHeading, education, experience, btns } from '../data/Resume/resume.json'
 import { typeChecker } from '../decorator/typeChecker'
 import { type ThemeType } from '../types/util'
 import ThemeEvent from './ThemeModel'
