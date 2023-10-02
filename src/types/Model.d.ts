@@ -1,5 +1,9 @@
-import { type UserDetails, type BioCard, type CvCard, type ImageCard } from './cards'
+import { type UserDetails, type BioCard, type CvCard, type ImageCard, type timeLine } from './cards'
+import { type ThemeType } from './util'
 
+export interface ThemeData {
+  theme: ThemeType
+}
 export type HeaderData = {
   brand: Item
   menu: Item[]
@@ -21,9 +25,34 @@ export interface EducationData {
   heading: string
   education: UserDetails[]
 }
+export interface ResumeData {
+  subHeading: string
+  heading: string
+  btns: {
+    ee: {
+      name: string
+      status: string
+    }
+    skills: {
+      name: string
+      status: string
+    }
+  }
+  education: {
+    heading: string
+    timeLine: timeLine
+    resume: UserDetails[]
+  }
+  experience: {
+    heading: string
+    timeLine: timeLine
+    resume: UserDetails[]
+  }
+}
 export interface ModelData {
   header: HeaderData
   home: HomeData
   experience: ExperienceData
   education: EducationData
+  resume: ResumeData
 }

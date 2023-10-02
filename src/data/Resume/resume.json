@@ -1,0 +1,185 @@
+{
+  "heading": "My Resume",
+  "subHeading": "YEARS OF EXPERIENCE",
+  "btns": {
+    "ee": {
+      "name": "Education/Experience",
+      "status": "active"
+    },
+    "skills": {
+      "name": "Professional_Skills",
+      "status": ""
+    }
+  },
+  "education": {
+    "heading": "Education Quality",
+    "timeLine": {
+      "start": {
+        "month": "Aug",
+        "year": 2015
+      },
+      "end": {
+        "month": "Aug",
+        "year": 2022
+      }
+    },
+    "resumes": [
+      {
+        "kind": "Institute",
+        "degree": {
+          "degree": "Bachelor's in Engineering",
+          "stream": "Computer Science"
+        },
+        "cgpa": {
+          "cgpa": 8.07,
+          "total": 10
+        },
+        "courses": [
+          "DSA",
+          "Web Development",
+          "Operating System"
+        ],
+        "location": "Bengaluru, India",
+        "name": "Sir M.VIT",
+        "timeLine": {
+          "start": {
+            "month": "Aug",
+            "year": 2022
+          },
+          "end": {
+            "month": "Aug",
+            "year": 2018
+          }
+        }
+      },
+      {
+        "kind": "Institute",
+        "degree": {
+          "degree": "Bachelor's in Engineering",
+          "stream": "Computer Science"
+        },
+        "cgpa": {
+          "cgpa": 8.07,
+          "total": 10
+        },
+        "courses": [
+          "DSA",
+          "Web Development",
+          "Operating System"
+        ],
+        "location": "Bengaluru, India",
+        "name": "Sir M.VIT",
+        "timeLine": {
+          "start": {
+            "month": "Aug",
+            "year": 2018
+          },
+          "end": {
+            "month": "Aug",
+            "year": 2022
+          }
+        }
+      },
+      {
+        "kind": "Institute",
+        "degree": {
+          "degree": "Bachelor's in Engineering",
+          "stream": "Computer Science"
+        },
+        "cgpa": {
+          "cgpa": 8.07,
+          "total": 10
+        },
+        "courses": [
+          "DSA",
+          "Web Development",
+          "Operating System"
+        ],
+        "location": "Bengaluru, India",
+        "name": "Sir M.VIT",
+        "timeLine": {
+          "start": {
+            "month": "Aug",
+            "year": 2022
+          },
+          "end": {
+            "month": "Aug",
+            "year": 2018
+          }
+        }
+      }
+    ]
+  },
+  "experience": {
+    "heading": "Job Experience",
+    "timeLine": {
+      "start": {
+        "month": "Aug",
+        "year": 2015
+      },
+      "end": {
+        "month": "Aug",
+        "year": 2022
+      }
+    },
+    "resumes": [
+      {
+        "kind": "Company",
+        "designation": "Software Engineer",
+        "skillSet": [
+          "Java",
+          "React",
+          "TypeScript"
+        ],
+        "location": "Bengaluru, India",
+        "name": "Target Corporation",
+        "timeLine": {
+          "start": {
+            "month": "Jan",
+            "year": 2022
+          },
+          "end": "Present"
+        },
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia maiores nostrum voluptas."
+      },
+      {
+        "kind": "Company",
+        "designation": "Software Engineer",
+        "skillSet": [
+          "Java",
+          "React",
+          "TypeScript"
+        ],
+        "location": "Bengaluru, India",
+        "name": "Target Corporation",
+        "timeLine": {
+          "start": {
+            "month": "Jan",
+            "year": 2022
+          },
+          "end": "Present"
+        },
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia maiores nostrum voluptas."
+      },
+      {
+        "kind": "Company",
+        "designation": "Software Engineer",
+        "skillSet": [
+          "Java",
+          "React",
+          "TypeScript"
+        ],
+        "location": "Bengaluru, India",
+        "name": "Target Corporation",
+        "timeLine": {
+          "start": {
+            "month": "Jan",
+            "year": 2022
+          },
+          "end": "Present"
+        },
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia maiores nostrum voluptas."
+      }
+    ]
+  }
+}

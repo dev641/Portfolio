@@ -4,7 +4,7 @@ import './styles/main.scss'
 import { PortfolioView } from './view/PortfolioView'
 
 // eslint-disable-next-line no-new
-new Portfolio(PortfolioModel, new PortfolioView(PortfolioModel.Data))
+new Portfolio(PortfolioModel, new PortfolioView(PortfolioModel.Data, PortfolioModel.Theme))
 // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
 
-console.log(PortfolioModel.Experience, PortfolioModel.Education)
+console.log(PortfolioModel.Resume)

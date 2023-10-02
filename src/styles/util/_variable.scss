@@ -9,6 +9,7 @@ $colors: (
   text-dark-heading: #0e0e10,
   text-dark-primary: #262626,
   text-dark-secondary: #3b3d40,
+  border-primary: #222529,
   text-red-primary: #ff014f,
   text-red-secondary: #f9004d,
   text-red-tertiary: #f9034f42,
@@ -29,6 +30,7 @@ $theme: (
 );
 $sizes: (
   root: 62.5%,
+  none:0,
   xs: 1.2rem,
   sm: 1.6rem,
   md: 2rem,
@@ -64,9 +66,13 @@ $sizes: (
   border-sm: 2px,
   border-md: 3px,
   border-lg: 4px,
-  border-xl: 5px
+  border-xl: 5px,
+  border-2xl: 6px
 );
 
+$padding:(
+  sm-r: 1rem 2rem,
+);
 $opacity: (
   0: 0,
   1: 25%,
@@ -88,7 +94,8 @@ $gradients: (
   red-hover-btn: linear-gradient(145deg,#ff014f,#f9004d),
   black: linear-gradient(145deg, #22262a, #23272b),
   white: linear-gradient(145deg, #e2e8ec, #fff),
-  black-hover: linear-gradient(145deg, #26282f,#0f0f0f, #262a2e)
+  black-hover: linear-gradient(145deg, #26282f,#0f0f0f, #262a2e),
+  border: linear-gradient(to right bottom, #212428, #16181c)
 );
 
 $dark: #000;
@@ -125,4 +132,8 @@ $font-family: (
 
 @function gredient($gredient-name) {
   @return map-get($map: $gradients, $key: $gredient-name);
+}
+
+@function padding($padding-name) {
+  @return map-get($map: $padding, $key: $padding-name);
 }

@@ -5,32 +5,37 @@ import { HeaderController } from './HeaderController'
 import { HomeController } from './HomeController'
 import { ExperienceController } from './ExperienceController'
 import { EducationController } from './EducationController'
+import { ResumeController } from './ResumeController'
 export default class PortfolioController {
-  private readonly PortfolioModel: PortfolioModel
-  private readonly PortfolioView: PortfolioView
+  private readonly Model: PortfolioModel
+  private readonly View: PortfolioView
 
-  constructor (portfolioModel: PortfolioModel, portfolioView: PortfolioView) {
-    this.PortfolioModel = portfolioModel
-    this.PortfolioView = portfolioView
+  constructor (Model: PortfolioModel, View: PortfolioView) {
+    this.Model = Model
+    this.View = View
     this.start()
   }
 
   start (): void {
     new HeaderController(
-      this.PortfolioModel.Header,
-      this.PortfolioView.Header
+      this.Model.Header,
+      this.View.Header
     )
     new HomeController(
-      this.PortfolioModel.Home,
-      this.PortfolioView.Home
+      this.Model.Home,
+      this.View.Home
     )
     new ExperienceController(
-      this.PortfolioModel.Experience,
-      this.PortfolioView.Experience
+      this.Model.Experience,
+      this.View.Experience
     )
     new EducationController(
-      this.PortfolioModel.Education,
-      this.PortfolioView.Education
+      this.Model.Education,
+      this.View.Education
+    )
+    new ResumeController(
+      this.Model.Resume,
+      this.View.Resume
     )
   }
 }

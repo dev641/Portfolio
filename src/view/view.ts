@@ -1,3 +1,5 @@
+import { type ThemeType } from '../types/util'
+
 export default abstract class View<T extends HTMLElement, U> {
   protected parentElement: T
   constructor (parentElementId: string) {
@@ -5,7 +7,7 @@ export default abstract class View<T extends HTMLElement, U> {
     this.parentElement = document.getElementById(parentElementId)! as T
   }
 
-  abstract render (data: U): void
+  abstract render (data: U, theme?: ThemeType): void
   // abstract update (data: U): void
   renderSectionBreak (): void {
     const hr: string = '<hr class="section-break">'

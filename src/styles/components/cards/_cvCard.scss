@@ -15,7 +15,7 @@
     text-decoration: none;
     transition: background 0.4s, transform 0.4s;
     &:hover {
-      @include cardHover(black-hover, -1rem)
+      @include cardHover(black-hover)
     }
   }
 

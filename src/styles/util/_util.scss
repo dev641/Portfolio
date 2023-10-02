@@ -24,7 +24,7 @@
   }
 
   &:hover {
-    @include cardHover(black-hover, -1rem);
+    @include cardHover(black-hover);
   }
 }
 
@@ -48,6 +48,10 @@
     }
 
     
-    @include cardHover(red-hover, -1rem);
+    @include cardHover(red-hover);
   }
+}
+
+.hidden {
+  display: none !important;
 }

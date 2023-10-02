@@ -34,16 +34,15 @@
   color: inherit;
 }
 
-@mixin cardHover($background: black-hover, $translate: 0) {
+@mixin cardHover($background: black-hover) {
   background: gredient($background);
-  transform: translateY($translate);
   @content;
 }
 
 @mixin disableHover {
   color: inherit;
 
-  @include cardHover(none, 0) {
+  @include cardHover(none) {
     background: inherit;
     & .btn {
       background: inherit;

@@ -18,6 +18,8 @@ export type ThemeGenerator = (theme: ThemeType) => string
 export type ControlThemeType = (theme: ThemeType) => void
 
 // Header
-export type HtmlGenerator = (items: T) => string
+export type HtmlGenerator = (items: T, theme?: ThemeType) => string
 
 export interface classList { current: string, prev: string }
+
+export type ResumeUpdator = (name: T) => void

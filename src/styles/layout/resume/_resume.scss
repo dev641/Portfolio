@@ -1,0 +1,89 @@
+#resume {
+  display: grid;
+  gap: 4rem;
+  grid-template-columns: 1fr 1fr;
+  & > .heading, & > .subHeading {
+    grid-column: 1/-1;
+  }
+  & > .heading {
+    translate: 0 -4rem;
+    margin-bottom: 0;
+  }
+  &__btn {
+    grid-column: 1/-1;
+    justify-content: space-between;
+    font-family: family(secondary), family(tertiary);
+
+    @include flexHorizontal;
+    & .button {
+      flex-grow: 1;
+      padding: 3rem;
+      background: inherit;
+      border-radius: 1rem;
+      border: none;
+      font-weight: 500;
+      font-size: size(sm);
+      transition: all 0.4s;
+      &.active, &:focus, &:hover {
+        color: color(text-red-primary);
+        font-family: family(primary), family(tertiary);
+
+      }
+    }
+    & .dark-btn {
+      box-shadow: shadow(dark-primary), shadow(dark-secondary);
+      color: color(text-light-primary);
+    }
+    & .light-btn {
+      box-shadow: shadow(light-primary), shadow(light-secondary);
+      color: color(text-dark-primary);
+    }
+  }
+
+  &__body {
+    grid-column: 1/-1;
+    gap: 3rem;
+    display: grid;
+    grid-template-columns: inherit;
+    &-heading-education,&-heading-experience {
+
+    &__timeLine {
+      color: color(text-red-primary);
+      font-size: size(sm);
+    }
+    &__heading {
+      font-size: size(xl);
+      font-weight: 700;
+    }
+  }
+  
+  .resume-body {
+    @include flexVertical;
+
+    gap: 3rem;
+    padding-left: 3rem;
+  }
+  &-right {
+      grid-column: 2;
+  }
+  .dark-body {
+    border-left: 5px solid #1b1c1d;
+  }
+  .light-body {
+    border-left: 5px solid #d9dee2;
+  }
+
+  & table {
+    grid-column: 1/-1;
+    border-spacing: 0;
+    & td {
+      border: 2px solid #1b1c1d;
+      border-right: 0;
+      &:last-child {
+        border: 2px solid #1b1c1d;
+      }
+    }
+  }
+  }
+
+}

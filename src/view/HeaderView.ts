@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { ThemeEnum } from '../model/Enum'
 import { type ControlThemeType, type classList } from '../types/util'
@@ -35,6 +36,7 @@ export class HeaderView extends View<HTMLDivElement, HeaderData> {
     const themeBtnClassGenerator = themeClassGenerator()
     const themeBackgroundGenerator = themeClassGenerator()
     const themeCardGenerator = themeClassGenerator()
+    const themeResumeBodyGenerator = themeClassGenerator()
     const themeUpdator: (element: HTMLElement, classList: classList) => void = (
       element,
       { current, prev }
@@ -46,6 +48,14 @@ export class HeaderView extends View<HTMLDivElement, HeaderData> {
     cards.forEach((card) => {
       themeUpdator(card as HTMLDivElement, themeCardGenerator('card'))
     })
+    const buttons = document.querySelectorAll('.button')
+    // debugger
+    buttons.forEach(btn => {
+      themeUpdator(btn as HTMLButtonElement, themeBtnClassGenerator('btn'))
+    })
+
+    const resumeBody = document.querySelectorAll('.resume-body')
+    resumeBody.forEach(body => { themeUpdator(body as HTMLDivElement, themeResumeBodyGenerator('body')) })
     themeUpdator(this.themeElement, themeBtnClassGenerator('theme-btn'))
     themeUpdator(document.body, themeBackgroundGenerator('background'))
     this.themeElement.dataset.theme = curTheme

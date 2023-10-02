@@ -48,11 +48,15 @@ html {
 }
 
 main section {
-  & .heading{
-    font-size: size(h4);
-    margin-bottom: size(space-lg);
+  & > .heading, & > .subHeading {
+    justify-self: center;
   }
-  & .subHeading {
+  & > .heading{
+    font-size: size(h2);
+    margin-bottom: size(space-lg);
+    font-weight: 700;
+  }
+  & > .subHeading {
     font-size: size(sm);
     color: color(text-red-primary);
   }
