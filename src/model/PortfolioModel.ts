@@ -1,13 +1,13 @@
-import Home, { type HomeModel } from './HomeModel'
+import { HomeModel } from './HomeModel'
 import { type ModelData } from '../types/Model'
-import Header, { type HeaderModel } from './HeaderModel'
+import { HeaderModel } from './HeaderModel'
 import Model from './Model'
-import Education, { type EducationModel } from './EducationModel'
-import Experience, { type ExperienceModel } from './ExperienceModel'
-import Resume, { type ResumeModel } from './ResumeModel'
+import { EducationModel } from './EducationModel'
+import { ExperienceModel } from './ExperienceModel'
+import { ResumeModel } from './ResumeModel'
 import { type ThemeType } from '../types/util'
 import ThemeEvent from './ThemeModel'
-
+import modelData from '../Api/ModelApi'
 export class PortfolioModel extends Model<ModelData> {
   private readonly header: HeaderModel
   private readonly home: HomeModel
@@ -16,26 +16,13 @@ export class PortfolioModel extends Model<ModelData> {
   private readonly resume: ResumeModel
   private theme: ThemeType
   constructor () {
-    const header = Header.Data
-    const home = Home.Data
-    const experience = Experience.Data
-    const education = Education.Data
-    const resume = Resume.Data
-    // const  = .Data
-    // const home = Home.Data
-    super({
-      header,
-      home,
-      experience,
-      education,
-      resume
-    })
-    this.header = Header
-    this.theme = Header.Data.theme
-    this.home = Home
-    this.experience = Experience
-    this.education = Education
-    this.resume = Resume
+    super(modelData)
+    this.header = new HeaderModel(this.Data.header)
+    this.theme = this.Data.header.theme
+    this.home = new HomeModel(this.Data.home)
+    this.experience = new ExperienceModel(this.Data.experience)
+    this.education = new EducationModel(this.Data.education)
+    this.resume = new ResumeModel(this.Data.resume)
     ThemeEvent.subscribe(this.changeTheme.bind(this))
   }
 
