@@ -49,6 +49,7 @@
     "webpack-hot-middleware": "^2.25.4"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.0.2",
     "concurrently": "^8.2.1",
     "css-loader": "^6.8.1",
     "live-server": "^1.2.2",
