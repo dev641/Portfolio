@@ -85,23 +85,20 @@ interface Company {
 export interface PortfolioCard {
   image: Link
   heading: string
-  skillSet: string[]
-  likes: {
+  skillSet: Logo[]
+  likeBtn: {
     name: Logo
     number: number
   }
 }
 
-export interface PortfolioExpandCard {
-  image: Link
-  heading: string
+export type PortfolioExpandCard = {
   feature: string
-  skillSet: Logo[]
   description: string
   project: { link: Link, logo: Logo }
-  likeBtn: Logo
   close: Logo
-}
+} & PortfolioCard
+
 export interface SectionContainer {
   heading: string
   subHeading: string

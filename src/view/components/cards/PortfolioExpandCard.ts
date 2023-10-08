@@ -13,8 +13,10 @@ const portfolioExpandCard: render = ({
   description,
   skillSet,
   likeBtn: {
-    logoClass: likeLogo,
-    name: likeName
+    name: {
+      name: likeName,
+      logoClass: likeLogo
+    }
   },
   project: {
     link: {
