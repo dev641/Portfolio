@@ -16,6 +16,9 @@
     color: darken($color: color(text-light-primary), $amount: 0%);
   }
 
+  & .main-skills {
+    color: color(text-red-primary);
+  }
   & .btn {
     background: inherit;
     box-shadow: inherit;
@@ -29,8 +32,10 @@
 }
 
 .light-card {
-  @include card(white,light-primary,light-secondary);
-
+  @include card(white,light-primary,light-secondary, red-hover);
+  
+  position: relative;
+  z-index: 1;
   & .btn {
     background: inherit;
     box-shadow: inherit;
@@ -52,6 +57,15 @@
   }
 }
 
+.light-btn {
+  background-color: color(text-light-secondary);
+  box-shadow: shadow(light-primary) , shadow(light-secondary);
+}
+.dark-btn {
+  background-color: color(text-dark-secondary);
+  box-shadow: shadow(dark-primary) , shadow(dark-secondary);
+}
 .hidden {
   display: none !important;
 }
+

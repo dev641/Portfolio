@@ -1,0 +1,44 @@
+#portfolio {
+  display: grid;
+  position: relative;
+  grid-template-columns: 100%;
+  overflow: hidden;
+
+  & i.left,& i.right{
+     color: #fff;
+    font-size: size(lg);
+    position: absolute;
+    border-radius: 100%;
+    background-color: color(text-dark-secondary);
+    padding: 1rem 1.5rem;
+    z-index: 10;
+    top: 60%;
+  }
+  & i.left {
+    left: -1rem;
+  }
+  & i.right {
+    right: -2rem;
+  }
+  &__body {
+    padding: 3rem;
+    z-index: 9;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    transition: transform 0.4s ease;
+  }
+
+}
+
+@keyframes slide-left {
+  to {
+    transform: translateX(23.75%);
+  }
+}
+
+@keyframes slide-right {
+  to {
+    transform: translateX(-23.75%);
+  }
+}

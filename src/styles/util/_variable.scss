@@ -8,7 +8,7 @@ $colors: (
   light-border: #e4e4e4,
   text-dark-heading: #0e0e10,
   text-dark-primary: #262626,
-  text-dark-secondary: #3b3d40,
+  text-dark-secondary: #212428,
   border-primary: #222529,
   text-red-primary: #ff014f,
   text-red-secondary: #f9004d,
@@ -67,7 +67,8 @@ $sizes: (
   border-md: 3px,
   border-lg: 4px,
   border-xl: 5px,
-  border-2xl: 6px
+  border-2xl: 6px,
+  carousel-card: 32%,
 );
 
 $padding:(

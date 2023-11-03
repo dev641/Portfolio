@@ -1,13 +1,13 @@
-import { type UserDetails, type BioCard, type CvCard, type ImageCard, type timeLine } from './cards'
+import { type UserDetails, type BioCard, type CvCard, type ImageCard, type timeLine, type SectionHeader, type PortfolioCard, type PortfolioExpandCard } from './cards'
 import { type ThemeType } from './util'
 
 export interface ThemeData {
   theme: ThemeType
 }
-export type HeaderData = {
+export interface HeaderData {
   brand: Item
   menu: Item[]
-} & { theme: ThemeType }
+}
 
 export interface HomeData {
   bio: BioCard
@@ -16,18 +16,15 @@ export interface HomeData {
 }
 
 export interface ExperienceData {
-  subHeading: string
-  heading: string
+  sectionHeader: SectionHeader
   experience: UserDetails[]
 }
 export interface EducationData {
-  subHeading: string
-  heading: string
+  sectionHeader: SectionHeader
   education: UserDetails[]
 }
 export interface ResumeData {
-  subHeading: string
-  heading: string
+  sectionHeader: SectionHeader
   btns: {
     ee: {
       name: string
@@ -49,10 +46,17 @@ export interface ResumeData {
     resume: UserDetails[]
   }
 }
+
+export interface PortfolioData {
+  sectionHeader: SectionHeader
+  data: Array<{ portfolio: PortfolioCard, expand: PortfolioExpandCard }>
+}
+
 export interface ModelData {
   header: HeaderData
   home: HomeData
   experience: ExperienceData
   education: EducationData
   resume: ResumeData
+  portfolio: PortfolioData
 }

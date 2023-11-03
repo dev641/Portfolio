@@ -23,16 +23,30 @@
   box-shadow: inherit;
 }
 
-@mixin card($gradient, $shadow1, $shadow2) {
+@mixin card($main, $shadow1, $shadow2, $hover: $main) {
+  @include backgroundGredientHover($main,$hover);
+
   border-radius: size(brxs);
   padding: size(space-sm);
   margin: size(xs);
   display: grid;
-  background: gredient($gradient);
+  background: gredient($main);
   box-shadow: shadow($shadow1), shadow($shadow2);
-  transition: background 0.4s, transform 0.4s;
+  transition: transform 0.4s ease;
   color: inherit;
 }
+
+@mixin backgroundGredientHover ($main, $hover) {
+  @keyframes background-hover-animation {
+     0% {
+    background: gredient($main);
+  }
+  100% {
+     background: gredient($hover);
+  }
+  }
+}
+
 
 @mixin cardHover($background: black-hover) {
   background: gredient($background);

@@ -99,7 +99,7 @@ export type PortfolioExpandCard = {
   close: Logo
 } & PortfolioCard
 
-export interface SectionContainer {
+export interface SectionHeader {
   heading: string
   subHeading: string
 }

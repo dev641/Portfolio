@@ -6,24 +6,25 @@ import { EducationModel } from './EducationModel'
 import { ExperienceModel } from './ExperienceModel'
 import { ResumeModel } from './ResumeModel'
 import { type ThemeType } from '../types/util'
-import ThemeEvent from './ThemeModel'
-import modelData from '../Api/ModelApi'
+import modelData, { Theme } from '../Api/ModelApi'
+import { PortfolioSectionModel } from './PortfolioSectionModel'
 export class PortfolioModel extends Model<ModelData> {
   private readonly header: HeaderModel
   private readonly home: HomeModel
   private readonly experience: ExperienceModel
   private readonly education: EducationModel
   private readonly resume: ResumeModel
+  private readonly portfolio: PortfolioSectionModel
   private theme: ThemeType
-  constructor () {
-    super(modelData)
+  constructor (data: ModelData, theme: ThemeType) {
+    super(data)
     this.header = new HeaderModel(this.Data.header)
-    this.theme = this.Data.header.theme
+    this.theme = theme
     this.home = new HomeModel(this.Data.home)
     this.experience = new ExperienceModel(this.Data.experience)
     this.education = new EducationModel(this.Data.education)
     this.resume = new ResumeModel(this.Data.resume)
-    ThemeEvent.subscribe(this.changeTheme.bind(this))
+    this.portfolio = new PortfolioSectionModel(this.Data.portfolio)
   }
 
   set Theme (theme: ThemeType) {
@@ -57,6 +58,10 @@ export class PortfolioModel extends Model<ModelData> {
   get Resume (): ResumeModel {
     return this.resume
   }
+
+  get PortfolioSection (): PortfolioSectionModel {
+    return this.portfolio
+  }
 }
 
-export default new PortfolioModel()
+export default new PortfolioModel(modelData, Theme)

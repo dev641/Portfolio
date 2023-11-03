@@ -2,102 +2,18 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 import { type ResumeData } from '../types/Model'
-import { type ResumeUpdator, type HtmlGenerator, type ThemeType } from '../types/util'
+import { type HtmlUpdator, type HtmlGenerator, type ThemeType, type ThemeChanger } from '../types/util'
+import { ThemeEnum } from '../util/Enum'
+import { themeClassGenerator, themeUpdator } from '../util/util'
 import btn from './components/buttons/btn'
 import resumeCard from './components/cards/ResumeCard'
 import sectionHeader from './components/cards/SectionHeader'
 import View from './view'
 
-export class ResumeView extends View<HTMLDivElement, ResumeData> {
-  constructor (data: ResumeData, theme: ThemeType) {
-    super('resume')
-    this.render(data, theme)
-  }
-
-  private readonly ResumeGenerator: HtmlGenerator = ({ subHeading, heading, btns, education, experience }: ResumeData, theme: ThemeType | undefined) => {
-    // // eslint-disable-next-line no-debugger
-    // debugger
-    const hidden = ({ status }: { status: string }): string => status !== 'active' ? 'hidden' : ''
-    return `
-     ${sectionHeader({ heading, subHeading })}
-     <div class="resume__btn" id="resume__btn">
-     ${btn(btns.ee, theme)}
-     ${btn(btns.skills, theme)}
-     </div>
-      <div class="resume__body ${hidden(btns.ee)}" id="resume__body">
-        <div class="resume__body-heading-education" id="resume__body-heading-education">
-       <div class="resume__body-heading-education__timeLine" id="resume__body-heading-education__timeLine">${education.timeLine.start.year} - ${education.timeLine.end === 'Present' ? new Date().getFullYear : education.timeLine.end.year}</div>
-       <div class="resume__body-heading-education__heading" id="resume__body-heading-education__heading">${education.heading}</div>
-        </div>
-        <div class="resume__body-heading-experience" id="resume__body-heading-experience">
-           <div class="resume__body-heading-experience__timeLine" id="resume__body-heading-experience__timeLine">${experience.timeLine.start.year} - ${experience.timeLine.end === 'Present' ? new Date().getFullYear : experience.timeLine.end.year}</div>
-           <div class="resume__body-heading-experience__heading" id="resume__body-heading-experience__heading">${experience.heading}</div>
-        </div>
-        <div class="resume__body-left resume-body ${theme === 0 ? 'dark' : 'light'}-body" id="resume__body-left">
-          ${education.resume.map(resume => resumeCard(resume, theme)).join('\n')}
-        </div>
-        <div class="resume__body-right resume-body ${theme === 0 ? 'dark' : 'light'}-body" id="resume__body-right">
-          ${experience.resume.map(resume => resumeCard(resume, theme)).join('\n')}
-        </div>
-        </div>
-     <div class="resume__body ${hidden(btns.skills)}" id="resume__body">
-     ${this.skillSetGenerator(education)}
-     </div>
-    `
-  }
-
-  render (data: ResumeData, theme: ThemeType): void {
-    const html = this.ResumeGenerator(data, theme)
-    this.parentElement.insertAdjacentHTML('afterbegin', html)
-    this.renderSectionBreak()
-  }
-
-  update (data: ResumeData, theme: ThemeType): void {
-    // debugger
-    console.log(theme)
-    // debugger
-    const newMarkup = this.ResumeGenerator(data, theme)
-    const newDom = document.createRange().createContextualFragment(newMarkup)
-    const newElements = Array.from(newDom.querySelectorAll('*'))
-    const curElements = Array.from(this.parentElement.querySelectorAll('*'))
-    newElements.forEach((newEl, i) => {
-      const curEl = curElements[i]
-      if (!newEl.isEqualNode(curEl)) {
-        // // eslint-disable-next-line no-debugger
-        // console.log(newEl, curEl)
-        Array.from(newEl.attributes).forEach(attr => {
-          // console.log(attr.name, attr.value, curEl.getAttribute(attr.name))
-          curEl.setAttribute(attr.name, attr.value)
-        })
-      }
-      // console.log(newEl, curEl)
-    })
-
-    // const resumeBodies = document.querySelectorAll('.resume__body')!
-    // resumeBodies.forEach(body => {
-    //   // eslint-disable-next-line no-debugger
-    //   debugger
-    //   if (body.classList.contains('hidden')) {
-    //     body.classList.remove('hidden')
-    //   } else body.classList.add('hidden')
-    // })
-  }
-
-  changeResumeBody: (controlResumeBody: ResumeUpdator) => void = (controlResumeBody) => {
-    const btn = document.querySelector('.resume__btn')! satisfies HTMLButtonElement
-    btn.addEventListener('click', (e: Event) => {
-      let target = e.target as HTMLElement
-      target = target.closest('.button')!
-      const name = target.dataset.name
-      // // eslint-disable-next-line no-debugger
-      // debugger
-      controlResumeBody(name)
-    })
-  }
-
-  private readonly skillSetGenerator: HtmlGenerator = (_) => {
+const ResumeGenerator: HtmlGenerator = ({ sectionHeader: sectionHeaderData, btns, education, experience }: ResumeData, theme: ThemeType) => {
+  const skillSetGenerator: HtmlGenerator = (_, theme) => {
     const skillSet = `
-      <table><tr><td valign="top" width="33%">
+      <table class="${theme}"><tr><td valign="top" width="33%">
 
       ### Front End
 
@@ -160,5 +76,59 @@ export class ResumeView extends View<HTMLDivElement, ResumeData> {
 
     `
     return skillSet
+  }
+
+  const hidden = ({ status }: { status: string }): string => status !== 'active' ? 'hidden' : ''
+  return `
+     ${sectionHeader(sectionHeaderData)}
+     <div class="resume__btn" id="resume__btn">
+     ${btn(btns.ee, theme)}
+     ${btn(btns.skills, theme)}
+     </div>
+      <div class="resume__body ${hidden(btns.ee)}" id="resume__body">
+        <div class="resume__body-heading-education" id="resume__body-heading-education">
+       <div class="resume__body-heading-education__timeLine" id="resume__body-heading-education__timeLine">${education.timeLine.start.year} - ${education.timeLine.end === 'Present' ? new Date().getFullYear : education.timeLine.end.year}</div>
+       <div class="resume__body-heading-education__heading" id="resume__body-heading-education__heading">${education.heading}</div>
+        </div>
+        <div class="resume__body-heading-experience" id="resume__body-heading-experience">
+           <div class="resume__body-heading-experience__timeLine" id="resume__body-heading-experience__timeLine">${experience.timeLine.start.year} - ${experience.timeLine.end === 'Present' ? new Date().getFullYear : experience.timeLine.end.year}</div>
+           <div class="resume__body-heading-experience__heading" id="resume__body-heading-experience__heading">${experience.heading}</div>
+        </div>
+        <div class="resume__body-left resume-body ${theme === 0 ? 'dark' : 'light'}-body" id="resume__body-left">
+          ${education.resume.map(resume => resumeCard(resume, theme)).join('\n')}
+        </div>
+        <div class="resume__body-right resume-body ${theme === 0 ? 'dark' : 'light'}-body" id="resume__body-right">
+          ${experience.resume.map(resume => resumeCard(resume, theme)).join('\n')}
+        </div>
+        </div>
+     <div class="resume__body ${hidden(btns.skills)}" id="resume__body">
+     ${skillSetGenerator(education, theme)}
+     </div>
+    `
+}
+
+export class ResumeView extends View<HTMLDivElement, ResumeData> {
+  constructor (data: ResumeData, theme: ThemeType) {
+    super('resume', ResumeGenerator)
+    this.render(data, theme)
+  }
+
+  changeTheme: ThemeChanger = (prevTheme, curTheme) => {
+    const pTheme = prevTheme === ThemeEnum.dark ? 'dark' : 'light'
+    const cTheme = prevTheme === ThemeEnum.dark ? 'dark' : 'light'
+    const themeResumeBodyGenerator = themeClassGenerator(pTheme, cTheme)
+    const resumeBody = document.querySelectorAll('.resume-body')
+    resumeBody.forEach(body => { themeUpdator(body as HTMLDivElement, themeResumeBodyGenerator('body')) })
+    this.update(curTheme)
+  }
+
+  changeResumeBody: (controlResumeBody: HtmlUpdator) => void = (controlResumeBody) => {
+    const btn = document.querySelector('.resume__btn')! satisfies HTMLButtonElement
+    btn.addEventListener('click', (e: Event) => {
+      let target = e.target as HTMLElement
+      target = target.closest('.button')!
+      const name = target.dataset.name
+      controlResumeBody(name)
+    })
   }
 }

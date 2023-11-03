@@ -1,26 +1,10 @@
 import { type ResumeData } from '../types/Model'
 import Model from './Model'
-import { type ThemeType } from '../types/util'
-import ThemeEvent from './ThemeModel'
-import { ThemeEnum } from './Enum'
 
 export class ResumeModel extends Model<ResumeData> {
-  private theme: ThemeType = ThemeEnum.dark
+  // eslint-disable-next-line @typescript-eslint/no-useless-constructor
   constructor (resumeData: ResumeData) {
     super(resumeData)
-    ThemeEvent.subscribe(this.changeTheme.bind(this))
-  }
-
-  set Theme (theme: ThemeType) {
-    this.theme = theme
-  }
-
-  get Theme (): ThemeType {
-    return this.theme
-  }
-
-  changeTheme (theme: ThemeType): void {
-    this.Theme = theme
   }
 
   changeStatus (name: string): void {

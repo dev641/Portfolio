@@ -1,6 +1,6 @@
 // menu -> brand  right list
 
-import { type ThemeEnum } from '../model/enum'
+import { type ThemeEnum } from '../util/Enum'
 export type UpdateFileType = (path: string, key: string, value: string) => void
 
 export interface Item {
@@ -18,8 +18,12 @@ export type ThemeGenerator = (theme: ThemeType) => string
 export type ControlThemeType = (theme: ThemeType) => void
 
 // Header
-export type HtmlGenerator = (items: T, theme?: ThemeType) => string
+export type HtmlGenerator = (items: T, theme: ThemeType) => string
+
+export type ThemeChanger = (prevTheme: ThemeType, curTheme: ThemeType) => void
 
 export interface classList { current: string, prev: string }
 
-export type ResumeUpdator = (name: T) => void
+export type HtmlUpdator = (name: T, theme?: ThemeType) => void
+
+export type ThemeFinder = () => ThemeType

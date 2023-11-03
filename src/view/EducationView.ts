@@ -1,25 +1,18 @@
 import { type EducationData } from '../types/Model'
-import { type HtmlGenerator } from '../types/util'
+import { type ThemeType, type HtmlGenerator } from '../types/util'
 import eeCard from './components/cards/EECard'
 import sectionHeader from './components/cards/SectionHeader'
 import View from './view'
 
-export class EducationView extends View<HTMLDivElement, EducationData> {
-  constructor (data: EducationData) {
-    super('education')
-    this.render(data)
-  }
-
-  educationGenerator: HtmlGenerator = ({ subHeading, heading, education }: EducationData) => {
-    return `
-     ${sectionHeader({ heading, subHeading })}
+const educationGenerator: HtmlGenerator = ({ sectionHeader: sectionHeaderData, education }: EducationData) => {
+  return `
+     ${sectionHeader(sectionHeaderData)}
      ${education.map(exp => eeCard(exp)).join('')}
     `
-  }
-
-  render (data: EducationData): void {
-    const html = this.educationGenerator(data)
-    this.parentElement.insertAdjacentHTML('afterbegin', html)
-    this.renderSectionBreak()
+}
+export class EducationView extends View<HTMLDivElement, EducationData> {
+  constructor (data: EducationData, theme: ThemeType) {
+    super('education', educationGenerator)
+    this.render(data, theme)
   }
 }

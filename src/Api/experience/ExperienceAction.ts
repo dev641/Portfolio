@@ -2,4 +2,4 @@ import { heading, subHeading, experience as exp } from '../../data/Experience/ex
 import { typeChecker } from '../../decorator/typeChecker'
 
 const experience = typeChecker(exp)
-export default { heading, subHeading, experience }
+export default { sectionHeader: { heading, subHeading }, experience }

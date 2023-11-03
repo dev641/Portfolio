@@ -92,23 +92,3 @@
     }
   }
 }
-
-.dark-card {
-  &::before {
-    background: #1b1c1d;
-  }
-  &::after {
-    border: 5px solid #17191c;
-    background: #222529;
-  }
-}
-
-.light-card {
-  &::before {
-    background: #d9dee2;
-  }
-  &::after {
-    border: 5px solid #d9dee2;
-    background: #ecf0f3;
-  }
-}

@@ -9,4 +9,4 @@ inject()
 new Portfolio(PortfolioModel, new PortfolioView(PortfolioModel.Data, PortfolioModel.Theme))
 // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
 
-console.log(PortfolioModel.Resume)
+// console.log(PortfolioModel.Resume)

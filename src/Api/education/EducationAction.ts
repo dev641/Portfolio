@@ -3,4 +3,4 @@ import { typeChecker } from '../../decorator/typeChecker'
 
 const education = typeChecker(ed)
 
-export default { education, heading, subHeading }
+export default { education, sectionHeader: { heading, subHeading } }

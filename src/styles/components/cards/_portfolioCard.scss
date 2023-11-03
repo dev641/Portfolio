@@ -1,5 +1,6 @@
 #portfolio-card {
-  grid-template-columns: repeat(2, size(pmd));
+  margin: 0;
+  flex: 1 0 size(carousel-card);
   &__image {
     grid-column: 1/-1;
     overflow: hidden;
@@ -13,7 +14,6 @@
   }
   &__main-skill {
     font-size: calc(size(p2xl)* 2);
-    color: color(text-red-primary);
     font-weight:500;
   }
   &__likes {
@@ -23,12 +23,12 @@
     gap: size(xs);
   }
   &__heading {
-    margin-top: size(space-xs);
-    font-size: calc(size(p2xl)* 5);
+    margin-top: size(xs);
+    font-size: calc(size(md));
   }
 
   &:hover {
-    @include cardHover() {
+    @include cardHover(none) {
       & img {
         transform: scale(1.1);
       }

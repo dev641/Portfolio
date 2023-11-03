@@ -1,10 +1,11 @@
-import { ThemeEnum } from './../../../model/Enum'
+import { ThemeEnum } from '../../../util/Enum'
 import {
   type HtmlGenerator,
   type ItemGenerator
   ,
   type Item,
-  type ThemeGenerator
+  type ThemeGenerator,
+  type ThemeType
 } from '../../../types/util'
 
 import { type HeaderData } from '../../../types/Model'
@@ -38,9 +39,8 @@ const themeGenerator: ThemeGenerator = (theme) => {
 }
 const headerGenerator: HtmlGenerator = ({
   brand,
-  menu,
-  theme
-}: HeaderData) => {
+  menu
+}: HeaderData, theme: ThemeType) => {
   const navbar = `
         <nav class="nav" id="nav">
           <div class="nav-logo" id="nav-logo">

@@ -9,6 +9,8 @@
 
 html {
   font-size: size(root);
+  position: relative;
+  z-index: 1;
 }
 
 #container {
