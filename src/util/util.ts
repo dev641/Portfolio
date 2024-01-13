@@ -19,25 +19,37 @@ export const themeUpdator: (element: HTMLElement, classList: classList) => void 
   element.classList.add(current)
 }
 
-export const customElementsGenerators = ({container}: {container: string, theme?: ThemeType}) => {
+type CustomElementInfo = { name: string; className: string };
+
+// Define the customElementsGenerators function
+export const customElementsGenerators: (
+  options: { container: string; theme?: ThemeType }
+) => CustomElementInfo[] | undefined = ({ container }) => {
   const customElementsMap = new Map([
-    	[
-        HEADER, [
-          {name:`#${HEADER} .nav-container__theme`, className: `theme`}, 
-          {name: `#${HEADER} #${THEME_ELEMENT_CLASS}`, className: `theme-btn`}
-        ]
-      ],
+    [
+      HEADER,
       [
-        RESUME, [
-          {name:`.resume-body`, className: `body`}, 
-        ]
+        { name: `#${HEADER} .nav-container__theme`, className: 'theme' },
+        { name: `#${HEADER} #${THEME_ELEMENT_CLASS}`, className: 'theme-btn' },
       ],
+    ],
+    [
+      RESUME,
       [
-        PORTFOLIO_SECTION, [
-          {name:`.carousel__btn`, className: `arrows`}, 
-        ]
+        { name: `.${RESUME}-body`, className: 'body' },
+        // Adjust the selector according to your actual structure
       ],
-    	// [HOME,[`#header .${theme}__theme`, '#header #nav-container__theme-btn']],
-  ])
-  return customElementsMap.get(container)
-}
+    ],
+    [
+      PORTFOLIO_SECTION,
+      [
+        { name: '.carousel__btn', className: 'arrows' },
+        // Adjust the selector according to your actual structure
+      ],
+    ],
+    // Add more mappings as needed
+  ]);
+
+  // Return the custom elements based on the provided container
+  return customElementsMap.get(container);
+};

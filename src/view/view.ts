@@ -11,16 +11,9 @@ export default abstract class View<T extends HTMLElement, U> {
     this.parentElement = document.getElementById(parentElementId)! as T
     this.htmlGenerator = htmlGenerator
     this.components = components
-    debugger
   }
 
   protected componentGenerator: (components: ComponentsClassName) => Components = (components) => {
-    // return {
-    //   cards : components.cards ? document.querySelectorAll(components.cards) : null,
-    //   btns : components.btns ? document.querySelectorAll(components.btns) : null,
-    //   background : components.background ? document.querySelector(components.background) : null,
-    //   elements : components.elements ? components.elements?.map(className => document.querySelectorAll(className)!) : null,
-    // }
      return {
       cards: components.cards ? document.querySelectorAll(components.cards) : null,
       btns: components.btns ? document.querySelectorAll(components.btns) : null,
@@ -79,7 +72,6 @@ export default abstract class View<T extends HTMLElement, U> {
   // }
 
   updateTheme ({elementClassName = null, curTheme, prevTheme}: {elementClassName?: string[] | null, curTheme: ThemeType, prevTheme: ThemeType}): void {
-    debugger
     const {cards, btns, background, elements} = this.componentGenerator(this.components)
     if (background) {
       const backgroundThemeGenerator = themeClassGenerator(prevTheme, curTheme)
