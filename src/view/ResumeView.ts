@@ -1,10 +1,10 @@
 /* eslint-disable no-debugger */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
+import { RESUME } from '../constant/constant'
 import { type ResumeData } from '../types/Model'
-import { type HtmlUpdator, type HtmlGenerator, type ThemeType, type ThemeChanger } from '../types/util'
-import { ThemeEnum } from '../util/Enum'
-import { themeClassGenerator, themeUpdator } from '../util/util'
+import { type HtmlUpdator, type HtmlGenerator, type ThemeType, type ThemeChanger, ComponentsClassName } from '../types/util'
+import { customElementsGenerators, themeClassGenerator, themeUpdator } from '../util/util'
 import btn from './components/buttons/btn'
 import resumeCard from './components/cards/ResumeCard'
 import sectionHeader from './components/cards/SectionHeader'
@@ -81,49 +81,57 @@ const ResumeGenerator: HtmlGenerator = ({ sectionHeader: sectionHeaderData, btns
   const hidden = ({ status }: { status: string }): string => status !== 'active' ? 'hidden' : ''
   return `
      ${sectionHeader(sectionHeaderData)}
-     <div class="resume__btn" id="resume__btn">
+     <div class="${RESUME}__btn" id="${RESUME}__btn">
      ${btn(btns.ee, theme)}
      ${btn(btns.skills, theme)}
      </div>
-      <div class="resume__body ${hidden(btns.ee)}" id="resume__body">
-        <div class="resume__body-heading-education" id="resume__body-heading-education">
-       <div class="resume__body-heading-education__timeLine" id="resume__body-heading-education__timeLine">${education.timeLine.start.year} - ${education.timeLine.end === 'Present' ? new Date().getFullYear : education.timeLine.end.year}</div>
-       <div class="resume__body-heading-education__heading" id="resume__body-heading-education__heading">${education.heading}</div>
+      <div class="${RESUME}__body ${hidden(btns.ee)}" id="${RESUME}__body">
+        <div class="${RESUME}__body-heading-education" id="${RESUME}__body-heading-education">
+       <div class="${RESUME}__body-heading-education__timeLine" id="${RESUME}__body-heading-education__timeLine">${education.timeLine.start.year} - ${education.timeLine.end === 'Present' ? new Date().getFullYear : education.timeLine.end.year}</div>
+       <div class="${RESUME}__body-heading-education__heading" id="${RESUME}__body-heading-education__heading">${education.heading}</div>
         </div>
-        <div class="resume__body-heading-experience" id="resume__body-heading-experience">
-           <div class="resume__body-heading-experience__timeLine" id="resume__body-heading-experience__timeLine">${experience.timeLine.start.year} - ${experience.timeLine.end === 'Present' ? new Date().getFullYear : experience.timeLine.end.year}</div>
-           <div class="resume__body-heading-experience__heading" id="resume__body-heading-experience__heading">${experience.heading}</div>
+        <div class="${RESUME}__body-heading-experience" id="${RESUME}__body-heading-experience">
+           <div class="${RESUME}__body-heading-experience__timeLine" id="${RESUME}__body-heading-experience__timeLine">${experience.timeLine.start.year} - ${experience.timeLine.end === 'Present' ? new Date().getFullYear : experience.timeLine.end.year}</div>
+           <div class="${RESUME}__body-heading-experience__heading" id="${RESUME}__body-heading-experience__heading">${experience.heading}</div>
         </div>
-        <div class="resume__body-left resume-body ${theme === 0 ? 'dark' : 'light'}-body" id="resume__body-left">
+        <div class="${RESUME}__body-left ${RESUME}-body ${theme}-body" id="${RESUME}__body-left">
           ${education.resume.map(resume => resumeCard(resume, theme)).join('\n')}
         </div>
-        <div class="resume__body-right resume-body ${theme === 0 ? 'dark' : 'light'}-body" id="resume__body-right">
+        <div class="${RESUME}__body-right ${RESUME}-body ${theme}-body" id="${RESUME}__body-right">
           ${experience.resume.map(resume => resumeCard(resume, theme)).join('\n')}
         </div>
         </div>
-     <div class="resume__body ${hidden(btns.skills)}" id="resume__body">
+     <div class="${RESUME}__body ${hidden(btns.skills)}" id="${RESUME}__body">
      ${skillSetGenerator(education, theme)}
      </div>
     `
 }
 
+const componentClassNameGenerator: (theme: ThemeType) => ComponentsClassName = (theme) => {
+  const elements = customElementsGenerators({container: RESUME, theme})?.map(el => el.name)
+  return {
+    btns: `#${RESUME} .button`,
+    cards: `#${RESUME} .card`,
+    elements
+  }
+}
+
 export class ResumeView extends View<HTMLDivElement, ResumeData> {
   constructor (data: ResumeData, theme: ThemeType) {
-    super('resume', ResumeGenerator)
+    super(RESUME, ResumeGenerator, componentClassNameGenerator(theme))
     this.render(data, theme)
+    // this.components = this.componentGenerator(componentClassNameGenerator(theme))
   }
 
   changeTheme: ThemeChanger = (prevTheme, curTheme) => {
-    const pTheme = prevTheme === ThemeEnum.dark ? 'dark' : 'light'
-    const cTheme = prevTheme === ThemeEnum.dark ? 'dark' : 'light'
-    const themeResumeBodyGenerator = themeClassGenerator(pTheme, cTheme)
-    const resumeBody = document.querySelectorAll('.resume-body')
-    resumeBody.forEach(body => { themeUpdator(body as HTMLDivElement, themeResumeBodyGenerator('body')) })
+    const themeResumeBodyGenerator = themeClassGenerator(prevTheme, curTheme)
+    const resumeBody = document.querySelectorAll(`.${RESUME}-body`)
+    resumeBody.forEach(body => { themeUpdator(body as HTMLDivElement, themeResumeBodyGenerator(`body`)) })
     this.update(curTheme)
   }
 
   changeResumeBody: (controlResumeBody: HtmlUpdator) => void = (controlResumeBody) => {
-    const btn = document.querySelector('.resume__btn')! satisfies HTMLButtonElement
+    const btn = document.querySelector(`.${RESUME}__btn`)! satisfies HTMLButtonElement
     btn.addEventListener('click', (e: Event) => {
       let target = e.target as HTMLElement
       target = target.closest('.button')!

@@ -10,13 +10,32 @@
     border-radius: size(border-2xl);
     top: size(none);
     left: size(none);
-    background: gredient(border);
     opacity: opacity(0);
     z-index: -1;
 }
 }
 
+.dark-card::before {
+  background: gredient(border);
+  right: 98%;
+}
 
+.dark-card::after {
+  outline: 5px solid #1b1c1d;
+  background-color: color(dark-primary);
+  right: 105%;
+}
+
+.light-card::before {
+  background-color: color(text-light-primary);
+  right: 100%;
+}
+
+.light-card::after {
+  outline: 5px solid #d9dee2;
+  right: 107%;
+  background-color: color(light-primary);
+}
 #resume-card {
   grid-template-columns: 70% 30%;
   row-gap: size(sm);
@@ -68,9 +87,8 @@
   &::before {
     position: absolute;
     content: "";
-    width: 50px;
+    width: 40px;
     height: 5px;
-    right: 98%;
     top: 63px;
     transform: translateY(-7px);
     z-index: 0;
@@ -82,10 +100,10 @@
     width: 10px;
     height: 10px;
     border-radius: 100%;
-    right: 104%;
-    top: 55px;
+    top: 60px;
     transform: translateY(-7px);
   }
+  
   &:hover {
     &::after {
       background: color(text-red-primary);

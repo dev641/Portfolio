@@ -8,7 +8,21 @@ export interface Item {
   href?: string
 }
 
-export type ItemGenerator = (items: Item | Item[]) => string
+export type Components = {
+  cards: NodeListOf<Element> | null,
+  btns: NodeListOf<Element> | null,
+  background: HTMLBodyElement | null,
+  elements: NodeListOf<Element>[] | null
+}
+
+export type ComponentsClassName = {
+  cards?: string,
+  btns?: string,
+  background?: string,
+  elements?: string[]
+}
+export type ThemeClassGeneratorType = { curTheme: ThemeType, prevTheme: ThemeType }
+export type ItemGenerator = (items: Item | Item[], theme: ThemeType) => string
 
 // Theme
 export type ThemeType = ThemeEnum.dark | ThemeEnum.light

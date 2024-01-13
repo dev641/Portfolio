@@ -6,6 +6,12 @@ import { EducationView } from './EducationView'
 import { ResumeView } from './ResumeView'
 import { type ThemeType } from '../types/util'
 import { PortfolioSectionView } from './PortfolioSectionView'
+import { ThemeEnum } from '../util/Enum'
+import { customElementsGenerators } from '../util/util'
+import { HEADER, PORTFOLIO_SECTION, RESUME } from '../constant/constant'
+
+const customElementsGeneratorsList = ({container, theme}: {container: string, theme: ThemeType}) => customElementsGenerators({container, theme})?.map(ele => ele.className)
+
 export class PortfolioView {
   private readonly header: HeaderView
   private readonly home: HomeView
@@ -44,5 +50,16 @@ export class PortfolioView {
 
   get PortfolioSection (): PortfolioSectionView {
     return this.portfolio
+  }
+
+  changeTheme = (theme: ThemeType) => {
+    	const prevTheme = this.Header.ThemeElement.dataset.theme === 'dark' ? ThemeEnum.dark : ThemeEnum.light
+      this.Header.updateTheme({curTheme: theme, prevTheme, elementClassName: customElementsGeneratorsList({container: HEADER, theme})})
+      this.Home.updateTheme({curTheme: theme, prevTheme})
+      this.Education.updateTheme({curTheme: theme, prevTheme})
+      this.Experience.updateTheme({curTheme: theme, prevTheme})
+      this.Resume.updateTheme({curTheme: theme, prevTheme, elementClassName: customElementsGeneratorsList({container: RESUME, theme})})
+      this.PortfolioSection.updateTheme({curTheme: theme, prevTheme, elementClassName: customElementsGeneratorsList({container: PORTFOLIO_SECTION, theme})})
+      this.Header.modifyThemeDataset(theme)
   }
 }

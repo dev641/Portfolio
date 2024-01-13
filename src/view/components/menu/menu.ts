@@ -9,7 +9,7 @@ import {
 } from '../../../types/util'
 
 import { type HeaderData } from '../../../types/Model'
-const itemGenerator: ItemGenerator = (items) => {
+const itemGenerator: ItemGenerator = (items, theme) => {
   return Array.isArray(items)
     ? items
       .map(
@@ -22,7 +22,7 @@ const itemGenerator: ItemGenerator = (items) => {
       .join('')
     // eslint-disable-next-line operator-linebreak
     : // `<img src="${items.href}" alt="${items.name}-logo" class="nav-logo__image" id="nav-logo__image">
-      `<div class="nav-logo__image" id="nav-logo__image"><i class="fa-solid fa-user fa-2x" id="nav-logo__image-icon"></i></div>
+      `<div class="nav-logo__image ${theme}-image" id="nav-logo__image"><i class="fa-solid fa-user fa-2x" id="nav-logo__image-icon"></i></div>
     <h2 class="nav-logo__name" id="nav-logo__name">${items.name}</h2>
   `
 }
@@ -30,7 +30,7 @@ const itemGenerator: ItemGenerator = (items) => {
 const themeGenerator: ThemeGenerator = (theme) => {
   const Theme = theme === ThemeEnum.dark ? 'dark' : 'light'
   return `
-  <div class="nav-container__theme"  id="nav-container__theme">
+  <div class="nav-container__theme ${theme}-theme"  id="nav-container__theme">
       <button class="nav-container__theme-btn dark-theme-btn" data-theme="${Theme}" id="nav-container__theme-btn">
       <i class="fa-solid fa-circle-half-stroke fa-2xl"></i>
     </button>
@@ -44,11 +44,11 @@ const headerGenerator: HtmlGenerator = ({
   const navbar = `
         <nav class="nav" id="nav">
           <div class="nav-logo" id="nav-logo">
-            ${itemGenerator(brand)}
+            ${itemGenerator(brand, theme)}
           </div>
           <div class="nav-container" id="nav-container">
             <ul class="nav-container__list" id="nav-container__list">
-              ${itemGenerator(menu)}
+              ${itemGenerator(menu, theme)}
             </ul>
             ${themeGenerator(theme)}
           </div>

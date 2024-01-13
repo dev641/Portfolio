@@ -1,6 +1,6 @@
 export enum ThemeEnum {
-  dark,
-  light,
+  dark="dark",
+  light="light",
 }
 
 export enum CarsouselBtn {

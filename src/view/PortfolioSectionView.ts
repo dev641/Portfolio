@@ -5,30 +5,37 @@ import PortfolioCard from './components/cards/PortfolioCard'
 import { type PortfolioData } from '../types/Model'
 import sectionHeader from './components/cards/SectionHeader'
 import View from './view'
-import { type ThemeType, type HtmlUpdator, type HtmlGenerator } from '../types/util'
+import { type ThemeType, type HtmlUpdator, type HtmlGenerator, ComponentsClassName } from '../types/util'
 import { CarsouselBtn } from '../util/Enum'
-import { CAROUSEL_CARD_WIDTH } from '../constant/constant'
+import { CAROUSEL_CARD_WIDTH, PORTFOLIO_SECTION } from '../constant/constant'
+import { customElementsGenerators } from '../util/util'
 
-const portfolioGenerator: HtmlGenerator = ({ data, sectionHeader: sectionHeaderData }: PortfolioData) => {
+const portfolioGenerator: HtmlGenerator = ({ data, sectionHeader: sectionHeaderData }: PortfolioData, _: ThemeType) => {
   const carousel = data.map((data, ind) => PortfolioCard(data.portfolio, ind)).join('')
   return `
      ${sectionHeader(sectionHeaderData)}
-     <i class="left bi bi-arrow-left carousel__btn"></i>
-     <div class="portfolio__body" id="portfolio__body">
+     <div class="${PORTFOLIO_SECTION}__body" id="${PORTFOLIO_SECTION}__body">
       ${carousel}
       </div>
-      <i class="right bi bi-arrow-right carousel__btn"></i>
     `
 }
 
+const componentClassNameGenerator: (theme: ThemeType) => ComponentsClassName = (theme) => {
+  return {
+    btns: `#${PORTFOLIO_SECTION} .button`,
+    cards: `#${PORTFOLIO_SECTION} .${PORTFOLIO_SECTION}-card`,
+    elements: customElementsGenerators({container: PORTFOLIO_SECTION, theme})?.map(ele => ele.name)
+  }
+}
 export class PortfolioSectionView extends View<HTMLDivElement, PortfolioData> {
   constructor (data: PortfolioData, theme: ThemeType) {
-    super('portfolio', portfolioGenerator)
+    super(PORTFOLIO_SECTION, portfolioGenerator, componentClassNameGenerator(theme))
     this.render(data, theme)
+    // this.components = this.componentGenerator(componentClassNameGenerator(theme))
   }
 
   moveCarousel (move: CarsouselBtn): void {
-    const carousel = document.getElementById('portfolio__body')! as HTMLDivElement
+    const carousel = document.getElementById(`${PORTFOLIO_SECTION}__body`)! as HTMLDivElement
     debugger
     if (move === CarsouselBtn.RIGHT) {
       carousel.style.transition = 'transform 0s' // Disable transition temporarily
@@ -36,7 +43,7 @@ export class PortfolioSectionView extends View<HTMLDivElement, PortfolioData> {
       const firstClone = carousel.firstElementChild!.cloneNode(true)
       carousel.appendChild(firstClone)
       setTimeout(() => {
-        carousel.style.transition = 'transform 0.5s ease' // Re-enable transition
+        carousel.style.transition = 'transform 1s ease' // Re-enable transition
         carousel.style.transform = `translateX(-${CAROUSEL_CARD_WIDTH}%)`
         carousel.removeChild(carousel.firstElementChild!)
       }, 0)
@@ -46,7 +53,7 @@ export class PortfolioSectionView extends View<HTMLDivElement, PortfolioData> {
       carousel.style.transition = 'transform 0s' // Disable transition temporarily
       carousel.style.transform = `translateX(-${CAROUSEL_CARD_WIDTH}%)` // Adjust based on item width and spacing
       setTimeout(() => {
-        carousel.style.transition = 'transform 0.5s ease' // Re-enable transition
+        carousel.style.transition = 'transform 1s ease' // Re-enable transition
         carousel.style.transform = 'translateX(0)'
         carousel.removeChild(carousel.lastElementChild!)
       }, 0)
@@ -54,8 +61,8 @@ export class PortfolioSectionView extends View<HTMLDivElement, PortfolioData> {
   }
 
   carouselHandler: (controlCarousel: HtmlUpdator) => void = (controlCarousel) => {
-    const html = document.querySelector('#portfolio')! satisfies HTMLDivElement
-    html.addEventListener('click', (e: Event) => {
+    const body = document.querySelector(`body`)! satisfies HTMLBodyElement
+    body.addEventListener('click', (e: Event) => {
       let target = e.target as HTMLDivElement
       target = target.closest('.carousel__btn')!
       // // eslint-disable-next-line no-debugger

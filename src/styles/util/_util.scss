@@ -1,13 +1,4 @@
 
-.dark-background {
-  background-color: color(dark-primary);
-  color: darken($color: color(text-light-primary), $amount: 5%);
-}
-
-.light-background {
-  background-color: color(light-primary);
-  color: lighten($color: color(text-dark-primary), $amount: 5%);
-}
 
 .dark-card {
   @include card(black,dark-primary,dark-secondary);
@@ -43,6 +34,11 @@
     color: color(text-red-primary);
   }
 
+    & i.left,
+    & i.right {
+      background-color: color(text-light-secondary);
+      color: color(text-dark-primary);
+    }
   &:hover {
     color: color(light-primary);
 

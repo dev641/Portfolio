@@ -24,7 +24,8 @@ export default class PortfolioController {
 
   controlTheme: ControlThemeType = (theme) => {
     this.Model.changeTheme(theme)
-    this.View.Header.update(theme)
+    // this.View.Header(theme)
+    this.View.changeTheme(theme)
   }
 
   start (): void {

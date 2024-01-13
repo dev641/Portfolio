@@ -21,7 +21,40 @@ html {
   margin:size(space-xl) auto;
 }
 
+body {
+  & i.left,
+  & i.right {
+    font-size: size(lg);
+    position: absolute;
+    border-radius: 100%;
+    padding: 1rem 1.5rem;
+    z-index: 10;
+    top: 90%;
+  }
+
+  & i.left {
+    left: 7.5%;
+  }
+
+  & i.right {
+    right: 6.5%;
+  }
+
+  .dark-arrows {
+    background-color: color(dark-primary);
+    color: color(text-light-primary);
+    box-shadow: shadow(dark-primary), shadow(dark-secondary);
+  }
+
+  .light-arrows {
+    background-color: color(light-primary);
+    color: color(text-dark-primary);
+    box-shadow: shadow(light-primary),shadow(light-secondary) ;
+  }
+}
 .dark-background {
+  background-color: color(dark-primary);
+  color: darken($color: color(text-light-primary), $amount: 5%);
   .bio-card__heading span {
     color: color(text-red-primary);
   }
@@ -29,11 +62,13 @@ html {
     background-color: lighten(color(text-dark-primary), opacity(2));
   }
   .section-break {
-     @include section-break(dark-border);
-}
+    @include section-break(dark-border);
+  }
 }
 
 .light-background {
+  background-color: color(light-primary);
+  color: lighten($color: color(text-dark-primary), $amount: 5%);
   .bio-card__heading{
     color: color(text-dark-secondary);
     & span {

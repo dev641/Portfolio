@@ -44,7 +44,7 @@ const resumeCard: render = (data: UserDetails, theme: ThemeType) => {
   }
   const html = `
       <div class="cards">
-        <div class="resume-card card ${theme === 0 ? 'dark' : 'light'}-card" id="resume-card">
+        <div class="resume-card card ${theme}-card" id="resume-card">
             ${data.kind === 'Institute' ? Institue.degree : Company.designation}
             <div class="resume-card__location btn" id="resume-card__location">${location}</div>
             <div class="resume-card__name" id="resume-card__name">${name} (${startMonth}, ${startYear}-${end === 'Present' ? 'Present' : `${end.month}, ${end.year}`})</div>
