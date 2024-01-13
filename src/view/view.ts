@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-strict-boolean-expression @typescript-eslint/no-non-null-assertion */
 import { type HtmlGenerator, Components, ComponentsClassName } from './../types/util.d'
 import { type ThemeType } from '../types/util'
 import { themeClassGenerator, themeUpdator } from '../util/util'
