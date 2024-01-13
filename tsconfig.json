@@ -114,4 +114,8 @@
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
   // "include": ["./src/**/*.ts","./src/types/webpack.d.ts"]
+  "rules": {
+    "@typescript-eslint/strict-boolean-expressions": "off"
+    // Add other rules as needed
+  }
 }
