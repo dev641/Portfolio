@@ -56,8 +56,12 @@
     &-list {
       list-style: none;
       display: flex;
-      & i {
-        font-size: calc(size(p2xl) * 2);
+      & li {
+        padding: padding(skill-icons);
+        margin: size(md);
+        & i {
+            font-size: calc(size(p2xl) * 2);
+          }
       }
     }
   }

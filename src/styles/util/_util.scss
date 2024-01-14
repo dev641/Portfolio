@@ -10,6 +10,10 @@
   & .main-skills {
     color: color(text-red-primary);
   }
+
+  & .skill-icons {
+    box-shadow: shadow(dark-primary), shadow(dark-secondary);
+  }
   & .btn {
     background: inherit;
     box-shadow: inherit;
@@ -27,6 +31,9 @@
   
   position: relative;
   z-index: 1;
+  & .skill-icons {
+    box-shadow: shadow(light-primary), shadow(light-secondary);
+  }
   & .btn {
     background: inherit;
     box-shadow: inherit;
@@ -51,7 +58,7 @@
       box-shadow: none;
       color: inherit;
     }
-    
+
     @include cardHover(red-hover);
   }
 }

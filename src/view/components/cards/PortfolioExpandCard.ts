@@ -2,7 +2,7 @@ import { ThemeType } from '../../../types/util'
 import { type Logo, type PortfolioExpandCard, type render } from './../../../types/cards.d'
 
 const skillListGenerator: render = (skills: Logo[]) => {
-  return skills.map(({ logoClass }) => `<li class="portfolio-expand-card__skills-list__item" id="portfolio-expand-card__skills-list__item"><i class="${logoClass.join(' ')}"></i></li>`).join('\n')
+  return skills.map(({ logoClass }) => `<li class="portfolio-expand-card__skills-list__item skill-icons" id="portfolio-expand-card__skills-list__item"><i class="${logoClass.join(' ')}"></i></li>`).join('\n')
 }
 const portfolioExpandCard: render = ({
   heading,
