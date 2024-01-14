@@ -109,13 +109,14 @@ export class PortfolioSectionView extends View<HTMLDivElement, PortfolioData> {
     const portfolio = document.querySelector(`#${PORTFOLIO_SECTION}`)! satisfies HTMLDivElement
     portfolio.addEventListener('click', (e: Event) => {
       const target = e.target! as HTMLDivElement
+            debugger
       const card = target.closest(`#${PORTFOLIO_SECTION}-card`)! as HTMLDivElement
       const likeBtn = target.closest(`#${PORTFOLIO_SECTION}-card__likes i`)! as HTMLButtonElement
-      const isClicked = likeBtn.dataset.isclicked
+      const isClicked = likeBtn?.dataset.isclicked
       const index = Number.parseInt(card.getAttribute('tabindex')!)
       const data = {
         index,
-        likeBtn:(isClicked !== 'true') && (likeBtn !== null || likeBtn !== undefined)
+        likeBtn:(isClicked && isClicked !== 'true') && (likeBtn !== null || likeBtn !== undefined)
       }
       controlPortfolioExpandCard(data)
       likeBtn.dataset.isclicked = 'true'
