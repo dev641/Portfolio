@@ -20,7 +20,6 @@ export class PortfolioSectionController extends Controller<PortfolioSectionModel
   }
 
   controlPortfolioExpand (index: number): void {
-    debugger
     const data = this.Model.getPortfolioExpandData(index)
     const theme = this.ThemeFinder()
     this.View.addPortfolioExpandCardToDOM(data, theme)
