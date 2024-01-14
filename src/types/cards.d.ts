@@ -7,7 +7,7 @@ export interface ImageCard {
   image: Link
 }
 
-export type render = (data: T, theme?: themeType) => string
+export type render = (data: T, theme?: themeType, ind?:number) => string
 
 export type renderSection = (id: string, data: T) => string
 

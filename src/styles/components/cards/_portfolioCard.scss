@@ -1,11 +1,12 @@
 #portfolio-card {
   margin: 0;
   flex: 1 0 size(carousel-card);
+  grid-template-columns: 70% 30%;
   &__image {
     grid-column: 1/-1;
     overflow: hidden;
     border-radius: size(brxs);
-    margin-bottom: size(space-xs);
+    margin-bottom: size(md);
     img{
     width: size(p2xl);
     border-radius: size(brxs);
@@ -13,18 +14,30 @@
   }
   }
   &__main-skill {
-    font-size: calc(size(p2xl)* 2);
+    font-size: size(xs);
     font-weight:500;
   }
   &__likes {
     justify-self: flex-end;
-    font-size: calc(size(p2xl)* 2);
+    font-size: calc(size(p2xl)* 1.5);
     display: flex;
     gap: size(xs);
+
+    & i{
+      height: size(sm);
+      &[class$="-fill"], &:hover {
+        color: color(text-red-primary);
+      }
+    }
   }
   &__heading {
-    margin-top: size(xs);
     font-size: calc(size(md));
+    justify-self: self-start;
+    font-weight: 500;
+    transition: all 0.4s ease-in-out;
+    &:hover {
+      color: color(text-red-primary);
+    }
   }
 
   &:hover {

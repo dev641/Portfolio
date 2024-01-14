@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: family(primary), family(secondary), family(tertiary);
-  line-height: 1.6;
+  line-height: 1.2;
   letter-spacing: 2px;
 }
 
@@ -28,7 +28,7 @@ body {
     font-size: size(lg);
     position: absolute;
     border-radius: 100%;
-    padding: 1rem 1.5rem;
+    padding: 1.5rem;
     z-index: 10;
     top: 90%;
   }

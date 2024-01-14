@@ -27,25 +27,6 @@ export class HeaderView extends View<HTMLDivElement, HeaderData> {
     // this.components = this.componentGenerator(componentClassNameGenerator(theme))
     // debugger
   }
-  // updateTheme: (theme: ThemeType, _data?: HeaderData) => void = (theme, _data) => {
-  //   const curTheme = theme === ThemeEnum.dark ? 'dark' : 'light'
-  //   const prevTheme = this.themeElement.dataset.theme === 'dark' ? 'dark' : 'light'
-  //   const themeBtnClassGenerator = themeClassGenerator(prevTheme, curTheme)
-  //   const themeBackgroundGenerator = themeClassGenerator(prevTheme, curTheme)
-  //   const themeCardGenerator = themeClassGenerator(prevTheme, curTheme)
-  //   const cards = document.querySelectorAll('.card')
-  //   cards.forEach((card) => {
-  //     themeUpdator(card as HTMLDivElement, themeCardGenerator('card'))
-  //   })
-  //   const buttons = document.querySelectorAll('.button')
-  //   buttons.forEach(btn => {
-  //     themeUpdator(btn as HTMLButtonElement, themeBtnClassGenerator('btn'))
-  //   })
-
-  //   themeUpdator(this.themeElement, themeBtnClassGenerator('theme-btn'))
-  //   themeUpdator(document.body, themeBackgroundGenerator('background'))
-  //   this.themeElement.dataset.theme = curTheme
-  // }
 
   get ThemeElement (): HTMLButtonElement {
     return this.themeElement

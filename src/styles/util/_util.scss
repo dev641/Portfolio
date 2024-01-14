@@ -28,6 +28,10 @@
 
 .light-card {
   @include card(white,light-primary,light-secondary, red-hover);
+
+  & .main-skills {
+    color: color(text-red-primary);
+  }
   
   position: relative;
   z-index: 1;

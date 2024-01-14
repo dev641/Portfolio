@@ -13,8 +13,8 @@ import { PortfolioExpandView } from './PortfolioExpandView'
 import { PortfolioExpandCard } from '../types/cards'
 // import portfolioExpandCard from './components/cards/PortfolioExpandCard'
 
-const portfolioGenerator: HtmlGenerator = ({ data, sectionHeader: sectionHeaderData }: PortfolioData, _: ThemeType) => {
-  const carousel = data.map((data, ind) => PortfolioCard(data.portfolio, ind)).join('')
+const portfolioGenerator: HtmlGenerator = ({ data, sectionHeader: sectionHeaderData }: PortfolioData, theme: ThemeType) => {
+  const carousel = data.map((data, ind) => PortfolioCard(data.portfolio, theme, ind)).join('')
   return `
      ${sectionHeader(sectionHeaderData)}
      <div class="${PORTFOLIO_SECTION}__body" id="${PORTFOLIO_SECTION}__body">
@@ -110,8 +110,15 @@ export class PortfolioSectionView extends View<HTMLDivElement, PortfolioData> {
     portfolio.addEventListener('click', (e: Event) => {
       const target = e.target! as HTMLDivElement
       const card = target.closest(`#${PORTFOLIO_SECTION}-card`)! as HTMLDivElement
+      const likeBtn = target.closest(`#${PORTFOLIO_SECTION}-card__likes i`)! as HTMLButtonElement
+      const isClicked = likeBtn.dataset.isclicked
       const index = Number.parseInt(card.getAttribute('tabindex')!)
-      controlPortfolioExpandCard(index)
+      const data = {
+        index,
+        likeBtn:(isClicked !== 'true') && (likeBtn !== null || likeBtn !== undefined)
+      }
+      controlPortfolioExpandCard(data)
+      likeBtn.dataset.isclicked = 'true'
     })
   }
 

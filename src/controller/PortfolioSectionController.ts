@@ -19,9 +19,14 @@ export class PortfolioSectionController extends Controller<PortfolioSectionModel
     this.View.moveCarousel(move)
   }
 
-  controlPortfolioExpand (index: number): void {
-    const data = this.Model.getPortfolioExpandData(index)
+  controlPortfolioExpand ({index, likeBtn}: {index: number, likeBtn: boolean}): void {
     const theme = this.ThemeFinder()
-    this.View.addPortfolioExpandCardToDOM(data, theme)
+    if (likeBtn) {
+      this.Model.updateLike(index)
+      this.View.update(theme,this.Model.Data)
+    } else {
+      const data = this.Model.getPortfolioExpandData(index)
+      this.View.addPortfolioExpandCardToDOM(data, theme)
+    }
   }
 }

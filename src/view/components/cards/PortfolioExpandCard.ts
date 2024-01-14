@@ -28,7 +28,7 @@ const portfolioExpandCard: render = ({
   close: {
     logoClass: closeLogo
   }
-}: PortfolioExpandCard, theme: ThemeType) => {
+}: PortfolioExpandCard, theme?: ThemeType) => {
   return `
     <div class="portfolio-expand-card card ${theme}-card" id="portfolio-expand-card">
           <div class="portfolio-expand-card__image" id="portfolio-expand-card__image">

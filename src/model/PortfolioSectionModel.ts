@@ -46,6 +46,18 @@ export class PortfolioSectionModel extends Model<PortfolioData> {
     return this.to
   }
 
+  updateLike (index: number): void {
+    const {likeBtn} = {...this.Data.data[index].portfolio}
+    likeBtn.number+=1
+    likeBtn.name.logoClass = likeBtn.name.logoClass.map((className) => {
+      if (className.startsWith('bi-') && !className.endsWith('-fill') && className.length > 3) {
+        className = className + '-fill'
+      }
+      return className
+    })
+    this.Data.data[index].portfolio.likeBtn = {...likeBtn}
+  }
+
   getPortfolioExpandData (ind: number): PortfolioExpandCard {
     return this.Data.data[ind].expand
   }
