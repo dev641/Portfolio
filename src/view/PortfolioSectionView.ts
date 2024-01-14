@@ -27,6 +27,19 @@ const componentClassNameGenerator: (theme: ThemeType) => ComponentsClassName = (
     elements: customElementsGenerators({container: PORTFOLIO_SECTION, theme})?.map(ele => ele.name)
   }
 }
+
+const controlBoxShadow = (carouselBtns: NodeListOf<HTMLButtonElement>) => {
+  const boxShadows: string[] = []
+  carouselBtns.forEach((btn) => {
+    boxShadows.push(btn.style.boxShadow)
+    btn.style.boxShadow = 'none'
+  })
+  setTimeout(() => {
+    carouselBtns.forEach((btn, index) => {
+      btn.style.boxShadow = boxShadows[index]
+    })
+  }, 500)
+}
 export class PortfolioSectionView extends View<HTMLDivElement, PortfolioData> {
   constructor (data: PortfolioData, theme: ThemeType) {
     super(PORTFOLIO_SECTION, portfolioGenerator, componentClassNameGenerator(theme))
@@ -36,7 +49,7 @@ export class PortfolioSectionView extends View<HTMLDivElement, PortfolioData> {
 
   moveCarousel (move: CarsouselBtn): void {
     const carousel = document.getElementById(`${PORTFOLIO_SECTION}__body`)! as HTMLDivElement
-    debugger
+    const carouselBtns = document.querySelectorAll('.carousel__btn')! satisfies NodeListOf<HTMLButtonElement>
     if (move === CarsouselBtn.RIGHT) {
       carousel.style.transition = 'transform 0s' // Disable transition temporarily
       carousel.style.transform = 'translateX(0)' // Adjust based on item width and spacing
@@ -45,6 +58,7 @@ export class PortfolioSectionView extends View<HTMLDivElement, PortfolioData> {
       setTimeout(() => {
         carousel.style.transition = 'transform 1s ease' // Re-enable transition
         carousel.style.transform = `translateX(-${CAROUSEL_CARD_WIDTH}%)`
+        controlBoxShadow(carouselBtns)
         carousel.removeChild(carousel.firstElementChild!)
       }, 0)
     } else {
@@ -55,6 +69,7 @@ export class PortfolioSectionView extends View<HTMLDivElement, PortfolioData> {
       setTimeout(() => {
         carousel.style.transition = 'transform 1s ease' // Re-enable transition
         carousel.style.transform = 'translateX(0)'
+        controlBoxShadow(carouselBtns)
         carousel.removeChild(carousel.lastElementChild!)
       }, 0)
     }
@@ -66,7 +81,6 @@ export class PortfolioSectionView extends View<HTMLDivElement, PortfolioData> {
       arrow.addEventListener('click', (e: Event) => {
         let btn
         const target = e.target! as HTMLElement
-        debugger
         if (target.classList.contains('left')) {
           btn = CarsouselBtn.LEFT
         } else if (target.classList.contains('right')) {
