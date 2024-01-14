@@ -11,7 +11,7 @@ export class PortfolioSectionController extends Controller<PortfolioSectionModel
     super(model, view, themeFinder)
     this.View.carouselHandler(this.controlCarousel.bind(this))
     this.View.portfolioExpandCardOpenHandler(this.controlPortfolioExpand.bind(this))
-    this.View.portfolioExpandCardCloseHandler()
+    this.View.portfolioExpandCardCloseHandler(this.controlPortfolioExpand.bind(this))
   }
 
   controlCarousel (move: CarsouselBtn): void {
@@ -21,12 +21,14 @@ export class PortfolioSectionController extends Controller<PortfolioSectionModel
 
   controlPortfolioExpand ({index, likeBtn}: {index: number, likeBtn: boolean}): void {
     const theme = this.ThemeFinder()
-    if (likeBtn) {
-      this.Model.updateLike(index)
-      this.View.update(theme,this.Model.Data)
-    } else {
-      const data = this.Model.getPortfolioExpandData(index)
-      this.View.addPortfolioExpandCardToDOM(data, theme)
+    if (index !== -1) {
+      if (likeBtn) {
+        this.Model.updateLike(index)
+        this.View.update(theme,this.Model.Data)
+      } else {
+        const data = this.Model.getPortfolioExpandData(index)
+        this.View.addPortfolioExpandCardToDOM(data, theme)
+      }
     }
   }
 }

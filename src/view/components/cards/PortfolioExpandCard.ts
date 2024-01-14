@@ -42,7 +42,7 @@ const portfolioExpandCard: render = ({
            ${skillListGenerator(skillSet)}
            </ul>
            </div>
-           <a class="portfolio-expand-card__like-btn btn" id="portfolio-expand-card__like-btn">${likeName} THIS <i class="${likeLogo.join(' ')}"></i> </a>
+           <a data-isclicked="false" class="portfolio-expand-card__like-btn btn" id="portfolio-expand-card__like-btn">${likeName} THIS <i class="${likeLogo.join(' ')}"></i> </a>
            <a href="${projectSrc}" class="portfolio-expand-card__project-link-btn btn" id="portfolio-expand-card__project-link-btn">VIEW THIS PROJECT <i class="${projectLogo.join(' ')}"></i></a>   
          <div class="portfolio-expand-card__close btn" id="portfolio-expand-card__btn-close"><i class="${closeLogo.join(' ')}"></i></div>
         </div>
