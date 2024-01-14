@@ -17,17 +17,28 @@
   & .btn {
     width: max-content;
     box-shadow: inherit;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 0.4s;
   }
+
+  & a {
+    text-decoration: none;
+  }
+
   &__feature {
     font-size: size(sm);
     grid-row: 1;
     grid-column: 2/-1;
+    text-transform: capitalize;
+    transform: translateY(calc(size(p2xl) * 1.5));
   }
 
   &__heading {
     font-size: size(h4);
     grid-row: 2;
     grid-column: 2/-1;
+    font-weight: bold;
   }
 
   &__description {
@@ -55,6 +66,9 @@
     grid-column: 2;
     font-size: size(xs);
     padding: size(xs) size(md);
+    &:hover {
+      transform: translateY(-1rem);
+    }
   }
 
   &__project-link-btn {
@@ -62,6 +76,11 @@
     grid-column: 3;
     font-size: size(xs);
     padding: size(xs) size(md);
+    transform: translateX(calc(size(p2xl) * -1));
+    &:hover {
+      transform: translate(calc(size(p2xl) * -1), -1rem);
+    }
+    
   }
 
   &__btn-close {
@@ -74,6 +93,30 @@
     & i {
       transform: translate(100px, 1px);
       font-size: size(xl);
+    }
+  }
+
+  &:hover {
+    @include cardHover(none) {
+      background: inherit;
+      color: inherit;
+      & img {
+        overflow: hidden;
+      }
+    }
+  }
+  &.light-card:hover {
+    box-shadow: shadow(light-primary),
+        shadow(light-secondary);
+    & .btn {
+      background: inherit;
+      box-shadow: inherit;
+      color: color(text-red-primary);
+  
+      &:hover {
+        background: gredient(red-hover-btn);
+        color: color(light-primary)
+      }
     }
   }
 }

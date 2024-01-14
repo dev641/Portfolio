@@ -15,6 +15,23 @@
 
 }
 
+.portfolio-expand {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  padding: 10rem 15rem;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  &.dark-background {
+    background-color: color(dark-primary);
+  }
+  &.light-background {
+    background-color: color(light-primary);
+  }
+}
+
 @keyframes slide-left {
   to {
     transform: translateX(23.75%);

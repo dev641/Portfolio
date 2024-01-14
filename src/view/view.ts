@@ -36,6 +36,7 @@ export default abstract class View<T extends HTMLElement, U> {
   }
 
   update (theme: ThemeType, data?: U): void {
+    debugger
     const newMarkup = this.htmlGenerator(data, theme)
     const newDom = document.createRange().createContextualFragment(newMarkup)
     const newElements = Array.from(newDom.querySelectorAll('*'))
@@ -44,9 +45,22 @@ export default abstract class View<T extends HTMLElement, U> {
       const curEl = curElements[i]
       if (!newEl.isEqualNode(curEl)) {
         Array.from(newEl.attributes).forEach(attr => {
-          // console.log(attr.name, attr.value, curEl.getAttribute(attr.name))
+          // console.log('newEl', attr.name, attr.value)
           curEl.setAttribute(attr.name, attr.value)
         })
+
+      // Compare specific text nodes or elements
+      const newTextNodes = Array.from(newEl.childNodes).filter((node) => node.nodeType === Node.TEXT_NODE)
+      const curTextNodes = Array.from(curEl.childNodes).filter((node) => node.nodeType === Node.TEXT_NODE)
+
+      newTextNodes.forEach((newTextNode, j) => {
+        const curTextNode = curTextNodes[j]
+
+        if (newTextNode.nodeValue !== curTextNode.nodeValue) {
+          // Do something with the text content, e.g., update it
+          curTextNode.nodeValue = newTextNode.nodeValue
+        }
+      });
       }
     })
   }

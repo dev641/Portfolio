@@ -32,22 +32,25 @@
     box-shadow: inherit;
     border-radius: calc(size(brxs) / 2);
     color: color(text-red-primary);
+    &:hover {
+      color: color(text-light-primary);
+      background: gredient(red-hover-btn);
+    }
   }
 
-    & i.left,
-    & i.right {
-      background-color: color(text-light-secondary);
-      color: color(text-dark-primary);
-    }
+  & i.left,
+  & i.right {
+    background-color: color(text-light-secondary);
+    color: color(text-dark-primary);
+  }
+
   &:hover {
     color: color(light-primary);
-
     & .btn {
       background: gredient(red-hover-btn);
       box-shadow: none;
       color: inherit;
     }
-
     
     @include cardHover(red-hover);
   }

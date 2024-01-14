@@ -7,8 +7,11 @@ import sectionHeader from './components/cards/SectionHeader'
 import View from './view'
 import { type ThemeType, type HtmlUpdator, type HtmlGenerator, ComponentsClassName } from '../types/util'
 import { CarsouselBtn } from '../util/Enum'
-import { CAROUSEL_CARD_WIDTH, PORTFOLIO_SECTION } from '../constant/constant'
-import { customElementsGenerators } from '../util/util'
+import { CAROUSEL_CARD_WIDTH, PORTFOLIO_EXPAND_SECTION, PORTFOLIO_SECTION } from '../constant/constant'
+import { customElementsGenerators, getScrollYOfSection } from '../util/util'
+import { PortfolioExpandView } from './PortfolioExpandView'
+import { PortfolioExpandCard } from '../types/cards'
+// import portfolioExpandCard from './components/cards/PortfolioExpandCard'
 
 const portfolioGenerator: HtmlGenerator = ({ data, sectionHeader: sectionHeaderData }: PortfolioData, _: ThemeType) => {
   const carousel = data.map((data, ind) => PortfolioCard(data.portfolio, ind)).join('')
@@ -38,12 +41,15 @@ const controlBoxShadow = (carouselBtns: NodeListOf<HTMLButtonElement>) => {
     carouselBtns.forEach((btn, index) => {
       btn.style.boxShadow = boxShadows[index]
     })
-  }, 500)
+  }, 0)
 }
 export class PortfolioSectionView extends View<HTMLDivElement, PortfolioData> {
+  private portFolioExpandView: PortfolioExpandView
   constructor (data: PortfolioData, theme: ThemeType) {
     super(PORTFOLIO_SECTION, portfolioGenerator, componentClassNameGenerator(theme))
     this.render(data, theme)
+    const expandData = data.data[0].expand
+    this.portFolioExpandView = new PortfolioExpandView(expandData, theme)
     // this.components = this.componentGenerator(componentClassNameGenerator(theme))
   }
 
@@ -56,7 +62,7 @@ export class PortfolioSectionView extends View<HTMLDivElement, PortfolioData> {
       const firstClone = carousel.firstElementChild!.cloneNode(true)
       carousel.appendChild(firstClone)
       setTimeout(() => {
-        carousel.style.transition = 'transform 1s ease' // Re-enable transition
+        carousel.style.transition = 'transform 0.75s ease' // Re-enable transition
         carousel.style.transform = `translateX(-${CAROUSEL_CARD_WIDTH}%)`
         controlBoxShadow(carouselBtns)
         carousel.removeChild(carousel.firstElementChild!)
@@ -67,7 +73,7 @@ export class PortfolioSectionView extends View<HTMLDivElement, PortfolioData> {
       carousel.style.transition = 'transform 0s' // Disable transition temporarily
       carousel.style.transform = `translateX(-${CAROUSEL_CARD_WIDTH}%)` // Adjust based on item width and spacing
       setTimeout(() => {
-        carousel.style.transition = 'transform 1s ease' // Re-enable transition
+        carousel.style.transition = 'transform 0.75s ease' // Re-enable transition
         carousel.style.transform = 'translateX(0)'
         controlBoxShadow(carouselBtns)
         carousel.removeChild(carousel.lastElementChild!)
@@ -88,6 +94,43 @@ export class PortfolioSectionView extends View<HTMLDivElement, PortfolioData> {
         }
         controlCarousel(btn)
       })
+    })
+  }
+
+  addPortfolioExpandCardToDOM: (data: PortfolioExpandCard, theme: ThemeType) => void = (data, theme) => {
+    const container = document.getElementById('page')! as HTMLDivElement
+    const portfolioExpandSection = document.getElementById(`${PORTFOLIO_SECTION}-expand`)! as HTMLDivElement
+    this.portFolioExpandView.update(theme, data)
+    container.classList.toggle('hidden')
+    portfolioExpandSection.classList.toggle('hidden')
+  }
+
+  portfolioExpandCardOpenHandler: (controlPortfolioExpandCard: HtmlUpdator) => void = (controlPortfolioExpandCard) => {
+    const portfolio = document.querySelector(`#${PORTFOLIO_SECTION}`)! satisfies HTMLDivElement
+    portfolio.addEventListener('click', (e: Event) => {
+      debugger
+      const target = e.target! as HTMLDivElement
+      const card = target.closest(`#${PORTFOLIO_SECTION}-card`)! as HTMLDivElement
+      const index = Number.parseInt(card.getAttribute('tabindex')!)
+      controlPortfolioExpandCard(index)
+    })
+  }
+
+  portfolioExpandCardCloseHandler: () => void = () => {
+    const container = document.getElementById('page')! as HTMLDivElement
+    const portfolioExpandSection = document.getElementById(`${PORTFOLIO_SECTION}-expand`)! as HTMLDivElement
+    // const closeBtn = document.querySelector(`#${PORTFOLIO_EXPAND_SECTION}`)! satisfies HTMLDivElement
+    portfolioExpandSection.addEventListener('click', (e: Event) => {
+      debugger
+      const target = e.target! as HTMLDivElement
+      const closeBtn = target.closest(`#${PORTFOLIO_EXPAND_SECTION}-card__btn-close`)! as HTMLDivElement
+      
+      if (closeBtn) {
+        container.classList.toggle('hidden')
+        const scrollPosition = getScrollYOfSection(PORTFOLIO_SECTION)
+        window.scrollBy(0, scrollPosition)
+        portfolioExpandSection.classList.toggle('hidden')
+      }
     })
   }
 }

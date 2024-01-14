@@ -5,65 +5,65 @@
     {
       "portfolio": {
         "image": {
-          "name": "image 1",
+          "name": "Project 1",
           "src": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"
         },
-        "heading": "React Project",
+        "heading": "Web Development Project",
         "skillSet": [
           {
-            "name": "image 1",
+            "name": "HTML",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-code"
             ]
           },
           {
-            "name": "image 1",
+            "name": "CSS",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-brush"
             ]
           },
           {
-            "name": "image 1",
+            "name": "JavaScript",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-javascript"
             ]
           }
         ],
         "likeBtn": {
           "name": {
-            "name": "image 1",
+            "name": "Like",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-heart"
             ]
           },
-          "number": 10
+          "number": 15
         }
       },
       "expand": {
-        "feature": "Feature",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia maiores nostrum voluptas.",
+        "feature": "Responsive Design",
+        "description": "A web development project showcasing responsive design. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia maiores nostrum voluptas.",
         "project": {
           "link": {
-            "name": "projectName",
-            "src": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"
+            "name": "View Project",
+            "src": "https://example-project1.com"
           },
           "logo": {
-            "name": "projectName",
+            "name": "Project Logo",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-display"
             ]
           }
         },
         "close": {
-          "name": "projectName",
+          "name": "Close",
           "logoClass": [
             "bi",
-            "bi-person"
+            "bi-x"
           ]
         }
       }
@@ -71,65 +71,65 @@
     {
       "portfolio": {
         "image": {
-          "name": "image 2",
+          "name": "Project 2",
           "src": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"
         },
-        "heading": "React Project",
+        "heading": "React Native App",
         "skillSet": [
           {
-            "name": "image 2",
+            "name": "React Native",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-react"
             ]
           },
           {
-            "name": "image 1",
+            "name": "Node.js",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-node-js"
             ]
           },
           {
-            "name": "image 1",
+            "name": "MongoDB",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-database"
             ]
           }
         ],
         "likeBtn": {
           "name": {
-            "name": "image 1",
+            "name": "Like",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-heart"
             ]
           },
-          "number": 10
+          "number": 20
         }
       },
       "expand": {
-        "feature": "Feature",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia maiores nostrum voluptas.",
+        "feature": "Cross-Platform Development",
+        "description": "A mobile app developed using React Native for cross-platform compatibility. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia maiores nostrum voluptas.",
         "project": {
           "link": {
-            "name": "projectName",
-            "src": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"
+            "name": "View Project",
+            "src": "https://example-project2.com"
           },
           "logo": {
-            "name": "projectName",
+            "name": "App Logo",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-mobile"
             ]
           }
         },
         "close": {
-          "name": "projectName",
+          "name": "Close",
           "logoClass": [
             "bi",
-            "bi-person"
+            "bi-x"
           ]
         }
       }
@@ -137,65 +137,65 @@
     {
       "portfolio": {
         "image": {
-          "name": "image 3",
+          "name": "Project 3",
           "src": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"
         },
-        "heading": "React Project",
+        "heading": "Data Visualization",
         "skillSet": [
           {
-            "name": "image 3",
+            "name": "D3.js",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-graph-up"
             ]
           },
           {
-            "name": "image 1",
+            "name": "Python",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-python"
             ]
           },
           {
-            "name": "image 1",
+            "name": "Pandas",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-table"
             ]
           }
         ],
         "likeBtn": {
           "name": {
-            "name": "image 1",
+            "name": "Like",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-heart"
             ]
           },
-          "number": 10
+          "number": 18
         }
       },
       "expand": {
-        "feature": "Feature",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia maiores nostrum voluptas.",
+        "feature": "Interactive Data Visualization",
+        "description": "A data visualization project using D3.js for interactive charts. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia maiores nostrum voluptas.",
         "project": {
           "link": {
-            "name": "projectName",
-            "src": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"
+            "name": "View Project",
+            "src": "https://example-project3.com"
           },
           "logo": {
-            "name": "projectName",
+            "name": "Chart Logo",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-bar-chart"
             ]
           }
         },
         "close": {
-          "name": "projectName",
+          "name": "Close",
           "logoClass": [
             "bi",
-            "bi-person"
+            "bi-x"
           ]
         }
       }
@@ -203,65 +203,65 @@
     {
       "portfolio": {
         "image": {
-          "name": "image 4",
+          "name": "Project 4",
           "src": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"
         },
-        "heading": "React Project",
+        "heading": "Vue.js SPA",
         "skillSet": [
           {
-            "name": "image 4",
+            "name": "Vue.js",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-vuejs"
             ]
           },
           {
-            "name": "image 1",
+            "name": "Vuex",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-box"
             ]
           },
           {
-            "name": "image 1",
+            "name": "Vue Router",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-link"
             ]
           }
         ],
         "likeBtn": {
           "name": {
-            "name": "image 1",
+            "name": "Like",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-heart"
             ]
           },
-          "number": 10
+          "number": 25
         }
       },
       "expand": {
-        "feature": "Feature",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia maiores nostrum voluptas.",
+        "feature": "Single Page Application",
+        "description": "A web application built with Vue.js for a seamless and interactive user experience. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia maiores nostrum voluptas.",
         "project": {
           "link": {
-            "name": "projectName",
-            "src": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"
+            "name": "View Project",
+            "src": "https://example-project4.com"
           },
           "logo": {
-            "name": "projectName",
+            "name": "Vue Logo",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-vuejs"
             ]
           }
         },
         "close": {
-          "name": "projectName",
+          "name": "Close",
           "logoClass": [
             "bi",
-            "bi-person"
+            "bi-x"
           ]
         }
       }
@@ -269,65 +269,65 @@
     {
       "portfolio": {
         "image": {
-          "name": "image 5",
+          "name": "Project 5",
           "src": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"
         },
-        "heading": "React Project",
+        "heading": "Express.js API",
         "skillSet": [
           {
-            "name": "image 5",
+            "name": "Express.js",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-node-js"
             ]
           },
           {
-            "name": "image 1",
+            "name": "MongoDB",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-database"
             ]
           },
           {
-            "name": "image 1",
+            "name": "RESTful API",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-collection-play"
             ]
           }
         ],
         "likeBtn": {
           "name": {
-            "name": "image 1",
+            "name": "Like",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-heart"
             ]
           },
-          "number": 10
+          "number": 22
         }
       },
       "expand": {
-        "feature": "Feature",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia maiores nostrum voluptas.",
+        "feature": "Server-side Development",
+        "description": "A backend API built with Express.js and MongoDB for server-side functionality. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia maiores nostrum voluptas.",
         "project": {
           "link": {
-            "name": "projectName",
-            "src": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"
+            "name": "View Project",
+            "src": "https://example-project5.com"
           },
           "logo": {
-            "name": "projectName",
+            "name": "Express Logo",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-node-js"
             ]
           }
         },
         "close": {
-          "name": "projectName",
+          "name": "Close",
           "logoClass": [
             "bi",
-            "bi-person"
+            "bi-x"
           ]
         }
       }
@@ -335,65 +335,65 @@
     {
       "portfolio": {
         "image": {
-          "name": "image 6",
+          "name": "Project 6",
           "src": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"
         },
-        "heading": "React Project",
+        "heading": "Angular Project",
         "skillSet": [
           {
-            "name": "image 6",
+            "name": "Angular",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-angular"
             ]
           },
           {
-            "name": "image 1",
+            "name": "RxJS",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-arrow-repeat"
             ]
           },
           {
-            "name": "image 1",
+            "name": "Angular Material",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-box"
             ]
           }
         ],
         "likeBtn": {
           "name": {
-            "name": "image 1",
+            "name": "Like",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-heart"
             ]
           },
-          "number": 10
+          "number": 28
         }
       },
       "expand": {
-        "feature": "Feature",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia maiores nostrum voluptas.",
+        "feature": "Frontend Framework",
+        "description": "An Angular project utilizing the power of Angular framework and RxJS for reactive programming. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia maiores nostrum voluptas.",
         "project": {
           "link": {
-            "name": "projectName",
-            "src": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"
+            "name": "View Project",
+            "src": "https://example-project6.com"
           },
           "logo": {
-            "name": "projectName",
+            "name": "Angular Logo",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-angular"
             ]
           }
         },
         "close": {
-          "name": "projectName",
+          "name": "Close",
           "logoClass": [
             "bi",
-            "bi-person"
+            "bi-x"
           ]
         }
       }
@@ -401,65 +401,65 @@
     {
       "portfolio": {
         "image": {
-          "name": "image 7",
+          "name": "Project 7",
           "src": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"
         },
-        "heading": "React Project",
+        "heading": "SASS Styling",
         "skillSet": [
           {
-            "name": "image 7",
+            "name": "SASS",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-sass"
             ]
           },
           {
-            "name": "image 1",
+            "name": "CSS Grid",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-grid"
             ]
           },
           {
-            "name": "image 1",
+            "name": "Flexbox",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-box"
             ]
           }
         ],
         "likeBtn": {
           "name": {
-            "name": "image 1",
+            "name": "Like",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-heart"
             ]
           },
-          "number": 10
+          "number": 20
         }
       },
       "expand": {
-        "feature": "Feature",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia maiores nostrum voluptas.",
+        "feature": "Advanced Styling",
+        "description": "A project showcasing advanced styling techniques using SASS, CSS Grid, and Flexbox. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse mollitia maiores nostrum voluptas.",
         "project": {
           "link": {
-            "name": "projectName",
-            "src": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"
+            "name": "View Project",
+            "src": "https://example-project7.com"
           },
           "logo": {
-            "name": "projectName",
+            "name": "SASS Logo",
             "logoClass": [
               "bi",
-              "bi-person"
+              "bi-sass"
             ]
           }
         },
         "close": {
-          "name": "projectName",
+          "name": "Close",
           "logoClass": [
             "bi",
-            "bi-person"
+            "bi-x"
           ]
         }
       }

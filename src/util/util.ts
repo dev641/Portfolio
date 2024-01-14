@@ -53,3 +53,14 @@ export const customElementsGenerators: (
   // Return the custom elements based on the provided container
   return customElementsMap.get(container);
 };
+
+export function getScrollYOfSection(sectionId: string): number {
+  const sectionElement = document.getElementById(sectionId)
+
+  if (sectionElement) {
+    const rect = sectionElement.getBoundingClientRect()
+    return window.scrollY + rect.top
+  }
+
+  return 0 // Default value if the section element is not found
+}

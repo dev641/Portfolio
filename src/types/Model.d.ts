@@ -48,7 +48,7 @@ export interface ResumeData {
 }
 
 export interface PortfolioData {
-  sectionHeader: SectionHeader
+  sectionHeader?: SectionHeader
   data: Array<{ portfolio: PortfolioCard, expand: PortfolioExpandCard }>
 }
 
