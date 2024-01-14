@@ -61,21 +61,19 @@ export class PortfolioSectionView extends View<HTMLDivElement, PortfolioData> {
   }
 
   carouselHandler: (controlCarousel: HtmlUpdator) => void = (controlCarousel) => {
-    const body = document.querySelector(`body`)! satisfies HTMLBodyElement
-    body.addEventListener('click', (e: Event) => {
-      let target = e.target as HTMLDivElement
-      target = target.closest('.carousel__btn')!
-      // // eslint-disable-next-line no-debugger
-      // debugger
-      if (target !== null) {
+    const arrowBtns = document.querySelectorAll('.carousel__btn')! satisfies NodeListOf<Element>
+    arrowBtns.forEach(arrow => {
+      arrow.addEventListener('click', (e: Event) => {
         let btn
+        const target = e.target! as HTMLElement
+        debugger
         if (target.classList.contains('left')) {
           btn = CarsouselBtn.LEFT
         } else if (target.classList.contains('right')) {
           btn = CarsouselBtn.RIGHT
         }
         controlCarousel(btn)
-      }
+      })
     })
   }
 }
