@@ -91,7 +91,7 @@
     position: absolute;
     top: size(space-xs);
     right: size(space-xs);
-    padding: calc(size(xs) / 2) calc(size(lg) / 2);
+    padding: padding(padding-close);
     border-radius: size(pmd);
 
     & i {
