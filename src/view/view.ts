@@ -36,7 +36,6 @@ export default abstract class View<T extends HTMLElement, U> {
   }
 
   update (theme: ThemeType, data?: U): void {
-    debugger
     const newMarkup = this.htmlGenerator(data, theme)
     const newDom = document.createRange().createContextualFragment(newMarkup)
     const newElements = Array.from(newDom.querySelectorAll('*'))

@@ -31,7 +31,7 @@ const componentClassNameGenerator: (theme: ThemeType) => ComponentsClassName = (
   }
 }
 
-const controlBoxShadow = (carouselBtns: NodeListOf<HTMLButtonElement>) => {
+const controlBoxShadow: (carouselBtns: NodeListOf<HTMLButtonElement>) => void = (carouselBtns) => {
   const boxShadows: string[] = []
   carouselBtns.forEach((btn) => {
     boxShadows.push(btn.style.boxShadow)
@@ -108,7 +108,6 @@ export class PortfolioSectionView extends View<HTMLDivElement, PortfolioData> {
   portfolioExpandCardOpenHandler: (controlPortfolioExpandCard: HtmlUpdator) => void = (controlPortfolioExpandCard) => {
     const portfolio = document.querySelector(`#${PORTFOLIO_SECTION}`)! satisfies HTMLDivElement
     portfolio.addEventListener('click', (e: Event) => {
-      debugger
       const target = e.target! as HTMLDivElement
       const card = target.closest(`#${PORTFOLIO_SECTION}-card`)! as HTMLDivElement
       const index = Number.parseInt(card.getAttribute('tabindex')!)
@@ -121,7 +120,6 @@ export class PortfolioSectionView extends View<HTMLDivElement, PortfolioData> {
     const portfolioExpandSection = document.getElementById(`${PORTFOLIO_SECTION}-expand`)! as HTMLDivElement
     // const closeBtn = document.querySelector(`#${PORTFOLIO_EXPAND_SECTION}`)! satisfies HTMLDivElement
     portfolioExpandSection.addEventListener('click', (e: Event) => {
-      debugger
       const target = e.target! as HTMLDivElement
       const closeBtn = target.closest(`#${PORTFOLIO_EXPAND_SECTION}-card__btn-close`)! as HTMLDivElement
       

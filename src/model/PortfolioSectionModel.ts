@@ -47,7 +47,6 @@ export class PortfolioSectionModel extends Model<PortfolioData> {
   }
 
   getPortfolioExpandData (ind: number): PortfolioExpandCard {
-    debugger
     return this.Data.data[ind].expand
   }
 
