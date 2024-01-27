@@ -141,12 +141,12 @@ export class PortfolioSectionView extends View<HTMLDivElement, PortfolioData> {
     // const closeBtn = document.querySelector(`#${PORTFOLIO_EXPAND_SECTION}`)! satisfies HTMLDivElement
     portfolioExpandSection.addEventListener('click', (e: Event) => {
       const target = e.target! as HTMLDivElement
-      debugger
       const closeBtn = target.closest(`#${PORTFOLIO_EXPAND_SECTION}-card__btn-close`)! as HTMLDivElement
       const likeBtn = target.closest(`#${PORTFOLIO_EXPAND_SECTION}-card__like-btn`)! as HTMLButtonElement
+      const portfolioExpandCard = target.closest(`#${PORTFOLIO_EXPAND_SECTION}-card`)! as HTMLDivElement
       if (likeBtn) {
         updateLike({likeBtn, index: this.portfolioExpandCardIndex, controlPortfolioExpandCard})
-      } else if (closeBtn) {
+      } else if (closeBtn || !portfolioExpandCard) {
         container.classList.toggle('hidden')
         const scrollPosition = getScrollYOfSection(PORTFOLIO_SECTION)
         window.scrollBy(0, scrollPosition)
