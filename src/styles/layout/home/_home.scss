@@ -5,4 +5,10 @@
     grid-row: 1/ span 2;
     grid-column: 2;
   }
+  &__left, &__right {
+    transition: transform 0.4s ease-out;
+    &:hover {
+      transform: translateY(calc(size(translate)* -1));
+    }
+  }
 }

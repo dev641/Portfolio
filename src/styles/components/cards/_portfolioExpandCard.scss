@@ -1,6 +1,8 @@
 #portfolio-expand-card {
   grid-template-columns: 40% 30% 30%;
   grid-template-rows: repeat(5, 1fr);
+  height: size(pxl);
+  width: calc(size(p2xl)* 0.8);
   column-gap: size(space-sm);
   position: relative;
   align-items: center;
@@ -71,7 +73,7 @@
     font-size: size(xs);
     padding: size(xs) size(md);
     &:hover {
-      transform: translateY(-1rem);
+      transform: translateY(calc(size(translate) * -1));
     }
   }
 
@@ -80,9 +82,9 @@
     grid-column: 3;
     font-size: size(xs);
     padding: size(xs) size(md);
-    transform: translateX(calc(size(p2xl) * -1));
+    transform: translateX(calc(size(pxl) * -1));
     &:hover {
-      transform: translate(calc(size(p2xl) * -1), -1rem);
+      transform: translate(calc(size(pxl) * -1), calc(size(translate) * -1));
     }
     
   }

@@ -8,7 +8,8 @@ import View from './view'
 
 const htmlGenerator: HtmlGenerator = (data: HomeData) => {
   return `
-      ${bioCard(data.bio)}${cvCard(data.CV)}${imageCard(data.image)}
+      <div class="home__left" id="home__left">${bioCard(data.bio)}${cvCard(data.CV)}</div>
+      <div class="home__right" id="home__right">${imageCard(data.image)}</div>
     `
 }
 const componentClassNameGenerator: () => ComponentsClassName = () => {
