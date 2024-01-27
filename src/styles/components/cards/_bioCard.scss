@@ -13,7 +13,7 @@
     &-inner {
     background-color: color(text-red-primary);
     width: max-content;
-    padding:calc(size(xs) / 4) size(xs) ;
+    padding:padding(biocard-icon);
     border-radius: 50%;
 
       & i {
@@ -31,6 +31,8 @@
   &__description {
     font-size: size(xs);
     font-weight: 400;
+    text-transform: capitalize;
+    line-height: line-height(medium);
     & span {
       color: color(text-red-primary);
       font-weight: 500;
@@ -40,6 +42,11 @@
   &__details {
     font-size: size(xs);
 
+    & tbody {
+      @include flexVertical;
+      
+      gap: 0.8rem;
+    }
     &-row__logo i {
      color: color(text-red-primary);
      font-size: calc(size(p2xl) * 1.4);

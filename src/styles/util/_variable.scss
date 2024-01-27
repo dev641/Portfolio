@@ -76,6 +76,7 @@ $padding:(
   sm-r: 1rem 2rem,
   skill-icons: 2rem,
   padding-close: 1.2rem 1.4rem,
+  biocard-icon: 0.9rem 1.2rem,
 );
 $opacity: (
   0: 0,
@@ -85,6 +86,12 @@ $opacity: (
   4: 67%,
   5: 75%,
   6: 100%,
+);
+
+$line-height: (
+  small: 1.2,
+  medium: 1.6,
+  large: 2,
 );
 $shadows: (
   dark-primary: 10px 10px 19px #1c1e22,
@@ -142,4 +149,8 @@ $font-family: (
 
 @function padding($padding-name) {
   @return map-get($map: $padding, $key: $padding-name);
+}
+
+@function line-height($line-height-name) {
+  @return map-get($map: $line-height, $key: $line-height-name);
 }
