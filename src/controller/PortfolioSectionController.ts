@@ -25,6 +25,7 @@ export class PortfolioSectionController extends Controller<PortfolioSectionModel
       if (likeBtn) {
         this.Model.updateLike(index)
         this.View.update(theme,this.Model.Data)
+        this.View.updatePortfolioExpandView(theme, this.Model.getPortfolioExpandData(index))
       } else {
         const data = this.Model.getPortfolioExpandData(index)
         this.View.addPortfolioExpandCardToDOM(data, theme)

@@ -45,16 +45,15 @@ const controlBoxShadow: (carouselBtns: NodeListOf<HTMLButtonElement>) => void = 
 }
 
 const updateLike: (options: {likeBtn: HTMLButtonElement, index: number, controlPortfolioExpandCard: HtmlUpdator}) => void = ({likeBtn, index, controlPortfolioExpandCard}) => {
-
   debugger
   const isClicked = likeBtn?.dataset.isclicked
   const data = {
     index,
-    likeBtn:(isClicked && isClicked !== 'true') && (likeBtn !== null || likeBtn !== undefined)
+    likeBtn
   }
   controlPortfolioExpandCard(data)
   if (likeBtn) {
-    likeBtn.dataset.isclicked = 'true'
+    likeBtn.dataset.isclicked = `${!isClicked}`
   }
 }
 
@@ -70,6 +69,9 @@ export class PortfolioSectionView extends View<HTMLDivElement, PortfolioData> {
     // this.components = this.componentGenerator(componentClassNameGenerator(theme))
   }
 
+  updatePortfolioExpandView (theme: ThemeType, data: PortfolioExpandCard): void {
+    this.portFolioExpandView.update(theme, data)
+  }
   moveCarousel (move: CarsouselBtn): void {
     const carousel = document.getElementById(`${PORTFOLIO_SECTION}__body`)! as HTMLDivElement
     const carouselBtns = document.querySelectorAll('.carousel__btn')! satisfies NodeListOf<HTMLButtonElement>
@@ -117,7 +119,7 @@ export class PortfolioSectionView extends View<HTMLDivElement, PortfolioData> {
   addPortfolioExpandCardToDOM: (data: PortfolioExpandCard, theme: ThemeType) => void = (data, theme) => {
     const container = document.getElementById('page')! as HTMLDivElement
     const portfolioExpandSection = document.getElementById(`${PORTFOLIO_SECTION}-expand`)! as HTMLDivElement
-    this.portFolioExpandView.update(theme, data)
+    this.updatePortfolioExpandView(theme, data)
     container.classList.toggle('hidden')
     portfolioExpandSection.classList.toggle('hidden')
   }
@@ -140,20 +142,11 @@ export class PortfolioSectionView extends View<HTMLDivElement, PortfolioData> {
     // const closeBtn = document.querySelector(`#${PORTFOLIO_EXPAND_SECTION}`)! satisfies HTMLDivElement
     portfolioExpandSection.addEventListener('click', (e: Event) => {
       const target = e.target! as HTMLDivElement
+      debugger
       const closeBtn = target.closest(`#${PORTFOLIO_EXPAND_SECTION}-card__btn-close`)! as HTMLDivElement
       const likeBtn = target.closest(`#${PORTFOLIO_EXPAND_SECTION}-card__like-btn`)! as HTMLButtonElement
       if (likeBtn) {
         updateLike({likeBtn, index: this.portfolioExpandCardIndex, controlPortfolioExpandCard})
-        const icon = likeBtn.querySelector('i')! as HTMLDivElement
-        debugger
-        if (icon) {
-          icon.classList.forEach(className => {
-          if (className.length > 3 && className.startsWith('bi-') && !className.endsWith('-fill')) {
-            icon.classList.remove(className)
-            icon.classList.add(`${className}-fill`)
-          }
-        })
-        }
       } else if (closeBtn) {
         container.classList.toggle('hidden')
         const scrollPosition = getScrollYOfSection(PORTFOLIO_SECTION)

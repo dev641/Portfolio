@@ -7,8 +7,12 @@ import Model from './Model'
 
 const generateUpdatedList: (options: {logoClass: string[]}) => string[] = ({logoClass}) => {
   return logoClass.map((className:string) => {
-      if (className.startsWith('bi-') && !className.endsWith('-fill') && className.length > 3) {
-        className = className + '-fill'
+      if (className.startsWith('bi-') && className.length > 3) {
+        if (!className.endsWith('-fill')) {
+          className = className + '-fill'
+        } else if (className.endsWith('-fill')) {
+        className = className.slice(0, -5)
+        }
       }
       return className
     })
@@ -57,12 +61,18 @@ export class PortfolioSectionModel extends Model<PortfolioData> {
 
   updateLike (index: number): void {
     const {likeBtn} = {...this.Data.data[index].portfolio}
-    const {likeBtn: expandLike} = {...this.Data.data[index].expand}
-    likeBtn.number+=1
+    // const {likeBtn: expandLike} = {...this.Data.data[index].expand}
     likeBtn.name.logoClass = generateUpdatedList({logoClass: likeBtn.name.logoClass})
-    expandLike.name.logoClass = generateUpdatedList({logoClass: expandLike.name.logoClass })
+    debugger
+    if (likeBtn.name.logoClass.some(className => className.endsWith('-fill'))) {
+      likeBtn.number+=1
+    } else {
+     likeBtn.number-=1 
+    }
+    // expandLike.name.logoClass = generateUpdatedList({logoClass: expandLike.name.logoClass })
     this.Data.data[index].portfolio.likeBtn = {...likeBtn}
-    this.Data.data[index].expand.likeBtn = {...expandLike}
+    // this.Data.data[index].expand.likeBtn = {...expandLike}
+    
   }
 
   getPortfolioExpandData (ind: number): PortfolioExpandCard {
