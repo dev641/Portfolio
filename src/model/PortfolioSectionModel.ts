@@ -63,7 +63,6 @@ export class PortfolioSectionModel extends Model<PortfolioData> {
     const {likeBtn} = {...this.Data.data[index].portfolio}
     // const {likeBtn: expandLike} = {...this.Data.data[index].expand}
     likeBtn.name.logoClass = generateUpdatedList({logoClass: likeBtn.name.logoClass})
-    debugger
     if (likeBtn.name.logoClass.some(className => className.endsWith('-fill'))) {
       likeBtn.number+=1
     } else {
