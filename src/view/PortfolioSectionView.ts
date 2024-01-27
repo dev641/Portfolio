@@ -45,7 +45,6 @@ const controlBoxShadow: (carouselBtns: NodeListOf<HTMLButtonElement>) => void = 
 }
 
 const updateLike: (options: {likeBtn: HTMLButtonElement, index: number, controlPortfolioExpandCard: HtmlUpdator}) => void = ({likeBtn, index, controlPortfolioExpandCard}) => {
-  debugger
   const isClicked = likeBtn?.dataset.isclicked
   const data = {
     index,
