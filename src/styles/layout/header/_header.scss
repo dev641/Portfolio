@@ -1,14 +1,11 @@
 #header {
   top: 0;
-  // width: 80%;
-  // left: 0;
-  // right: 0;
-  // margin: 2rem  auto;
   width: 100%;
   display: block;
   justify-content: center;
   #nav {
     @include flexHorizontal;
+    
     padding: calc(size(space-sm) / 2) 0;
     flex-grow: 1;
     justify-content: space-around;
@@ -59,6 +56,7 @@
           & > a {
             text-decoration: none;
             color: inherit;
+
             @include lightFontSize;
             
             text-transform: uppercase;
@@ -116,7 +114,6 @@
   position: fixed;
   top: 0;
   z-index: 100;
-  /* Add other styles as needed */
   opacity: 0.9;
   & .dark-heading {
     background-color: color(text-dark-primary);
