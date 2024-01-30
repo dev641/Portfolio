@@ -18,6 +18,7 @@ const componentClassNameGenerator: () => ComponentsClassName = () => {
     cards: `#${HOME} .card`
   }
 }
+
 export class HomeView extends View<HTMLDivElement, HomeData> {
   constructor (data: HomeData, theme: ThemeType) {
     super(HOME, htmlGenerator, componentClassNameGenerator())

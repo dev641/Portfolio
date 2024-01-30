@@ -42,7 +42,7 @@ const headerGenerator: HtmlGenerator = ({
   menu
 }: HeaderData, theme: ThemeType) => {
   const navbar = `
-        <nav class="nav" id="nav">
+        <nav class="nav ${theme}-heading" id="nav">
           <div class="nav-logo" id="nav-logo">
             ${itemGenerator(brand, theme)}
           </div>

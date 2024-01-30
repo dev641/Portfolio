@@ -1,14 +1,22 @@
 #header {
-  margin: calc(size(space-sm) / 2) calc(size(space-lg));
+  top: 0;
+  // width: 80%;
+  // left: 0;
+  // right: 0;
+  // margin: 2rem  auto;
+  width: 100%;
+  display: block;
+  justify-content: center;
   #nav {
     @include flexHorizontal;
-
-    justify-content: space-between;
+    padding: calc(size(space-sm) / 2) 0;
+    flex-grow: 1;
+    justify-content: space-around;
 
     &-logo {
       @include flexHorizontal;
 
-      font-size: size(sm);
+      font-size: size(brand-name);
       font-family: family(primary), family(tertiary);
       gap: size(sm);
 
@@ -46,14 +54,14 @@
         list-style-type: none;
 
         &-item {
-          padding: calc(size(space-sm));
+          padding: padding(header-link);
 
           & > a {
             text-decoration: none;
             color: inherit;
+            @include lightFontSize;
+            
             text-transform: uppercase;
-
-            @include regularFontSize;
           }
         }
       }
@@ -96,5 +104,24 @@
         }
       }
     }
+  }
+}
+.dark-heading {
+  background-color: color(dark-primary);
+}
+.light-heading {
+  background-color: color(light-primary);
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  /* Add other styles as needed */
+  opacity: 0.9;
+  & .dark-heading {
+    background-color: color(text-dark-primary);
+  }
+  & .light-heading {
+    background-color: color(text-light-primary);
   }
 }

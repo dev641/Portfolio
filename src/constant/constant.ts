@@ -5,6 +5,7 @@ export const CAROUSEL_CARD_WIDTH = 33
 
 export const HEADER = 'header'
 export const HOME = 'home'
+export const CONNECTS = 'connects'
 export const EDUCATION = 'education'
 export const EXPERIENCE = 'experience'
 export const RESUME = 'resume'

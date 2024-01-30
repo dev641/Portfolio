@@ -1,9 +1,9 @@
 $colors: (
   dark-primary: #212428,
-  light-primary: #f4f5f6,
+  light-primary: #F5F5F5,
   text-light-heading: #fbfbfb,
-  text-light-primary: #c4cfde,
-  text-light-secondary: #c0c1c4,
+  text-light-primary: #ebebeb,
+  text-light-secondary: #d6d6d6,
   dark-border: #0e0e10,
   light-border: #e4e4e4,
   text-dark-heading: #0e0e10,
@@ -31,8 +31,9 @@ $theme: (
 $sizes: (
   root: 62.5%,
   none:0,
+  brand-name: 1.8rem,
   xs: 1.2rem,
-  sm: 1.8rem,
+  sm: 1.6rem,
   md: 2rem,
   lg: 2.4rem,
   xl: 2.8rem,
@@ -75,6 +76,7 @@ $sizes: (
 $padding:(
   sm-r: 1rem 2rem,
   skill-icons: 2rem,
+  header-link: 2rem 1.5rem,
   padding-close: 1.2rem 1.4rem,
   biocard-icon: 0.9rem 1.2rem,
 );

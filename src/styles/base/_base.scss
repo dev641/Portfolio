@@ -19,7 +19,7 @@ html {
   
   gap: size(space-2xl);
   width: calc(size(space-2xl)* 12);
-  margin:size(space-xl) auto;
+  margin:calc(size(space-xl)* 1.5) auto;
 }
 
 body {

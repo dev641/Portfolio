@@ -28,7 +28,8 @@ export const customElementsGenerators: (
   const customElementsMap = new Map([
     [
       HEADER,
-      [
+      [ 
+        { name: `#${HEADER} .nav`, className: 'heading' },
         { name: `#${HEADER} .nav-container__theme`, className: 'theme' },
         { name: `#${HEADER} #${THEME_ELEMENT_CLASS}`, className: 'theme-btn' },
       ],

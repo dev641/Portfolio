@@ -5,7 +5,7 @@ import { type ThemeType, type ControlThemeType, ComponentsClassName } from '../t
 import { type HeaderData } from '../types/Model'
 import navGenerator from './components/menu/menu'
 import View from './view'
-import { HEADER, THEME_ELEMENT_CLASS } from '../constant/constant'
+import { HEADER, HOME, THEME_ELEMENT_CLASS } from '../constant/constant'
 import { customElementsGenerators } from '../util/util'
 
 const componentClassNameGenerator: (theme: ThemeType) => ComponentsClassName = (theme) => {
@@ -26,6 +26,7 @@ export class HeaderView extends View<HTMLDivElement, HeaderData> {
     )! as HTMLButtonElement
     // this.components = this.componentGenerator(componentClassNameGenerator(theme))
     // debugger
+    this.makeHeaderSticky()
   }
 
   get ThemeElement (): HTMLButtonElement {
@@ -45,5 +46,22 @@ export class HeaderView extends View<HTMLDivElement, HeaderData> {
         target.dataset.theme !== 'dark' ? ThemeEnum.dark : ThemeEnum.light
       controlTheme(newTheme)
     })
+  }
+
+  makeHeaderSticky (): void {
+    const header = document.getElementById(HEADER)! satisfies HTMLElement
+    const home = document.getElementById(HOME)! satisfies HTMLElement
+    const observer = new IntersectionObserver(function(entries) {
+        // Toggle sticky class based on whether section is intersecting
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                header.classList.add('sticky')
+            } else {
+                header.classList.remove('sticky')
+            }
+        })
+    }, { threshold: [0.25] }) // Adjust threshold value as needed
+    // Observe the specified section
+    observer.observe(home)
   }
 }

@@ -5,6 +5,7 @@
   },
   "menu": [
     { "name": "Home", "href": "home" },
+    { "name": "Profiles", "href": "profiles" },
     { "name": "Experience", "href": "experience" },
     { "name": "Education", "href": "education" },
     { "name": "Resume", "href": "resume" },
