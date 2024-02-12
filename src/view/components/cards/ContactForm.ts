@@ -3,7 +3,7 @@ const fieldGenerator: (data: formInput) => string = ({label, type, element, requ
     return element !== 'button' 
             ? `<div class="contact-form__${label} form-field" id="contact-form__${label}">
                 <label for="contact-form__${label}-input" class="contact-form__${label}-label" id="contact-form__${label}-label">${label}</label>
-                <${element} ${required ? required : ''} placeholder="${placeholder}" ${pattern ? `pattern="${pattern.toString().slice(1, -1)}"`: ''} type="${type}" id="contact-form__${label}-input" class="contact-form__${label}-input">${element === 'textarea'? `</${element}>` : ''}
+                <${element} ${required ?? ''} placeholder="${placeholder}" ${pattern ? `pattern="${pattern.toString().slice(1, -1)}"`: ''} type="${type}" id="contact-form__${label}-input" class="contact-form__${label}-input">${element === 'textarea' ? `</${element}>` : ''}
               </div>`
             : 
               `<div class="contact-form__${label} form-field" id="contact-form__${label}">
