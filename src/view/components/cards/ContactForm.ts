@@ -1,5 +1,5 @@
 import { ContactForm, formInput, render } from "../../../types/cards";
-const fieldGenerator = ({label, type, element, required, placeholder, pattern}: formInput) => {
+const fieldGenerator: (data: formInput) => string = ({label, type, element, required, placeholder, pattern}: formInput) => {
     return element !== 'button' 
             ? `<div class="contact-form__${label} form-field" id="contact-form__${label}">
                 <label for="contact-form__${label}-input" class="contact-form__${label}-label" id="contact-form__${label}-label">${label}</label>
