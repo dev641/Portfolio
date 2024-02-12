@@ -1,4 +1,4 @@
-import { type UserDetails, type BioCard, type CvCard, type ImageCard, type timeLine, type SectionHeader, type PortfolioCard, type PortfolioExpandCard } from './cards'
+import { type UserDetails, type BioCard, type CvCard, type ImageCard, type timeLine, type SectionHeader, type PortfolioCard, type PortfolioExpandCard, ContactDetails, ProfilesCard, ContactForm } from './cards'
 import { type ThemeType } from './util'
 
 export interface ThemeData {
@@ -15,6 +15,10 @@ export interface HomeData {
   image: ImageCard
 }
 
+export interface ProfilesData {
+  sectionHeader: SectionHeader
+  profiles: ProfilesCard
+}
 export interface ExperienceData {
   sectionHeader: SectionHeader
   experience: UserDetails[]
@@ -55,8 +59,17 @@ export interface PortfolioData {
 export interface ModelData {
   header: HeaderData
   home: HomeData
+  profiles: ProfilesData
   experience: ExperienceData
   education: EducationData
   resume: ResumeData
   portfolio: PortfolioData
+  contact: ContactData
 }
+
+export interface ContactData {
+  sectionHeader: SectionHeader
+  contactDetails: ContactDetails
+  contactForm: ContactForm
+}
+

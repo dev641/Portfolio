@@ -9,6 +9,8 @@ import { PortfolioSectionView } from './PortfolioSectionView'
 import { ThemeEnum } from '../util/Enum'
 import { customElementsGenerators } from '../util/util'
 import { HEADER, PORTFOLIO_SECTION, RESUME } from '../constant/constant'
+import { ProfilesView } from './ProfilesView'
+import { ContactView } from './ContactView'
 
 // const customElementsGeneratorsList: ({container: string, theme: ThemeType}) => string[] | undefined = ({container, theme}) => customElementsGenerators({container, theme})?.map(ele => ele.className)
 
@@ -23,17 +25,21 @@ const customElementsGeneratorsList: (
 export class PortfolioView {
   private readonly header: HeaderView
   private readonly home: HomeView
+  private readonly profiles: ProfilesView
   private readonly experience: ExperienceView
   private readonly education: EducationView
   private readonly resume: ResumeView
   private readonly portfolio: PortfolioSectionView
+  private readonly contact: ContactView
   constructor (data: ModelData, theme: ThemeType) {
     this.header = new HeaderView(data.header, theme)
     this.home = new HomeView(data.home, theme)
+    this.profiles = new ProfilesView(data.profiles, theme)
     this.experience = new ExperienceView(data.experience, theme)
     this.education = new EducationView(data.education, theme)
     this.resume = new ResumeView(data.resume, theme)
     this.portfolio = new PortfolioSectionView(data.portfolio, theme)
+    this.contact = new ContactView(data.contact, theme)
   }
 
   get Header (): HeaderView {
@@ -44,6 +50,9 @@ export class PortfolioView {
     return this.home
   }
 
+  get Profiles (): ProfilesView {
+    return this.profiles
+  }
   get Experience (): ExperienceView {
     return this.experience
   }
@@ -60,14 +69,19 @@ export class PortfolioView {
     return this.portfolio
   }
 
+  get Contact (): ContactView {
+    return this.contact
+  }
   changeTheme: (theme: ThemeType) => void = (theme) => {
     const prevTheme = this.Header.ThemeElement.dataset.theme === 'dark' ? ThemeEnum.dark : ThemeEnum.light
     this.Header.updateTheme({curTheme: theme, prevTheme, elementClassName: customElementsGeneratorsList({container: HEADER, theme})})
     this.Home.updateTheme({curTheme: theme, prevTheme})
+    this.Profiles.updateTheme({curTheme: theme, prevTheme})
     this.Education.updateTheme({curTheme: theme, prevTheme})
     this.Experience.updateTheme({curTheme: theme, prevTheme})
     this.Resume.updateTheme({curTheme: theme, prevTheme, elementClassName: customElementsGeneratorsList({container: RESUME, theme})})
     this.PortfolioSection.updateTheme({curTheme: theme, prevTheme, elementClassName: customElementsGeneratorsList({container: PORTFOLIO_SECTION, theme})})
+    this.Contact.updateTheme({curTheme: theme, prevTheme})
     this.Header.modifyThemeDataset(theme)
   }
 }

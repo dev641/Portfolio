@@ -8,12 +8,17 @@
 @import './components/cards/bioCard';
 @import './components/cards/cvCard';
 @import './components/cards/imageCard';
+@import './components/cards/profiles';
 @import "./components/cards/eeCard";
 @import "./components/cards/resumeCard";
 @import './components/cards/portfolioCard';
 @import './components/cards/portfolioExpandCard';
+@import './components/cards/contactDetails';
+@import './components/cards/contactForm';
 @import './layout/home/home';
+@import './layout/profiles/profiles';
 @import './layout/experience/experience';
 @import './layout/education/education';
 @import './layout/resume/resume';
 @import './layout/portfolioSection/portfolioSectkion';
+@import './layout/contact/contact';

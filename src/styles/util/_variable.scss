@@ -1,14 +1,16 @@
 $colors: (
+  dark-field: #1b1b1f,
+  light-field: #dadada,
   dark-primary: #212428,
   light-primary: #F5F5F5,
   text-light-heading: #fbfbfb,
   text-light-primary: #ebebeb,
-  text-light-secondary: #d6d6d6,
+  text-light-secondary: #949494,
   dark-border: #0e0e10,
   light-border: #e4e4e4,
   text-dark-heading: #0e0e10,
   text-dark-primary: #262626,
-  text-dark-secondary: #212428,
+  text-dark-secondary: #868686,
   border-primary: #222529,
   text-red-primary: #ff014f,
   text-red-secondary: #f9004d,
@@ -33,7 +35,7 @@ $sizes: (
   none:0,
   brand-name: 1.8rem,
   xs: 1.2rem,
-  sm: 1.6rem,
+  sm: 1.8rem,
   md: 2rem,
   lg: 2.4rem,
   xl: 2.8rem,
@@ -75,7 +77,8 @@ $sizes: (
 
 $padding:(
   sm-r: 1rem 2rem,
-  skill-icons: 2rem,
+  md-r: 1.5rem 2rem,
+  skill-icons: 1.5rem,
   header-link: 2rem 1.5rem,
   padding-close: 1.2rem 1.4rem,
   biocard-icon: 0.9rem 1.2rem,
@@ -102,6 +105,8 @@ $shadows: (
   light-primary: 5px 5px 15px #d1d9e6,
   light-secondary: -5px -5px 15px #fff,
   light-tertiary: -5px -5px 15px #fff,
+  inner-shadows-p: 1px 4px 2px -3px #000000b3 inset,
+  inner-shadows-s: -1px -3px 3px -2px #fff3 inset,
 );
 
 $gradients: (

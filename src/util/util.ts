@@ -65,3 +65,19 @@ export function getScrollYOfSection(sectionId: string): number {
 
   return 0 // Default value if the section element is not found
 }
+
+export function formatPhoneNumber(number: string): string {
+  // Convert the input to a string and remove all non-digit characters
+  const digits = number.replace(/\D/g, '')
+
+  // Use a regular expression to capture the country code and the parts of the phone number
+  const match = digits.match(/^(\d{2})(\d{3})(\d{3})(\d{4})$/)
+
+  if (match) {
+    // If the input matches the expected pattern, format it
+    return `+${match[1]} ${match[2]} ${match[3]} ${match[4]}`
+  }
+
+  // Return null or an error message if the input does not match the expected format
+  return 'Invalid number' // Adjust based on how you want to handle invalid inputs
+}

@@ -1,0 +1,27 @@
+{   
+    "heading": "Contact With Me",
+    "subHeading": "Contact",
+    "image": {
+        "name": "contact-image",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"
+    },
+    "name": "Dev Ashish",
+    "designation": "Software Developer",
+    "summary": "I am available for freelance work. Connect with me via and call in to my account.",
+    "phone": "+91 9876543210",
+    "email": "email@example.in",
+    "socialConnects": [
+        {
+            "name": "Facebook",
+            "src": "https://www.facebook.com/favicon.ico"
+        },
+        {
+            "name": "Facebook",
+            "src": "https://www.facebook.com/favicon.ico"
+        },
+        {
+            "name": "Facebook",
+            "src": "https://www.facebook.com/favicon.ico"
+        }
+    ]
+}

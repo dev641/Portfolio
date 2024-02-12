@@ -1,7 +1,6 @@
-import { type ThemeType } from '../../../types/util'
 import { type Institute, type UserDetails, type render, type Company } from './../../../types/cards.d'
 
-const resumeCard: render = (data: UserDetails, theme: ThemeType) => {
+const resumeCard: render = (data: UserDetails, theme) => {
   const {
     name,
     location,

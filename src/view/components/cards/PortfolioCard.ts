@@ -1,7 +1,6 @@
 import { type PortfolioCard, type render } from '../../../types/cards'
-import { ThemeType } from '../../../types/util'
 
-const portfolioCard: render = ({ heading, likeBtn: { number, name: { logoClass } }, image: { name: imageName, src }, skillSet }: PortfolioCard,theme?: ThemeType,  ind?: number) => {
+const portfolioCard: render = ({ heading, likeBtn: { number, name: { logoClass } }, image: { name: imageName, src }, skillSet }: PortfolioCard, theme,  ind) => {
   return `
     <div class="portfolio-card card ${theme}-card" id="portfolio-card" tabindex="${ind}">
           <div class="portfolio-card__image" id="portfolio-card__image">

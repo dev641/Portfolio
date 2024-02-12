@@ -9,9 +9,9 @@ const tableGenerator: render = (data: BioCardInfo) => {
    `).join('')
   return tableRow
 }
-const bioCard: render = ({ logo: { logoClass }, name, description, info }: BioCard) => {
+const bioCard: render = ({ logo: { logoClass }, name, description, info }: BioCard, theme) => {
   return `
-          <div class="bio-card card dark-card" id="bio-card">
+          <div class="bio-card card ${theme}-card" id="bio-card">
             <div class="bio-card__icon" id="bio-card__icon">
               <div class="bio-card__icon-inner" id="bio-card__icon-inner">
                 <i class="${logoClass.join(' ')}"></i>

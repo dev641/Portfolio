@@ -6,10 +6,10 @@ import cvCard from './components/cards/CvCard'
 import imageCard from './components/cards/ImageCard'
 import View from './view'
 
-const htmlGenerator: HtmlGenerator = (data: HomeData) => {
+const htmlGenerator: HtmlGenerator = (data: HomeData, theme: ThemeType) => {
   return `
-      <div class="home__left" id="home__left">${bioCard(data.bio)}${cvCard(data.CV)}</div>
-      <div class="home__right" id="home__right">${imageCard(data.image)}</div>
+      <div class="home__left" id="home__left">${bioCard(data.bio, theme)}${cvCard(data.CV, theme)}</div>
+      <div class="home__right" id="home__right">${imageCard(data.image, theme)}</div>
     `
 }
 const componentClassNameGenerator: () => ComponentsClassName = () => {

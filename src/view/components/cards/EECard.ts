@@ -1,6 +1,6 @@
 import { type Institute, type UserDetails, type render, type Company } from './../../../types/cards.d'
 
-const eeCard: render = (data: UserDetails) => {
+const eeCard: render = (data: UserDetails, theme) => {
   const {
     name,
     image,
@@ -29,8 +29,10 @@ const eeCard: render = (data: UserDetails) => {
     `
   }
   const html = `
-      <div class="eecard card dark-card" id="eecard">
-            <img src="${image?.src}" alt="${image?.name}-logo" class="eecard__img" id="eecard__img">
+      <div class="eecard card ${theme}-card" id="eecard">
+            <div class="eecard__image" id="eecard__image">
+              <img src="${image?.src}" alt="${image?.name}-logo" class="eecard__img" id="eecard__img">
+            </div>
             <div class="eecard__description" id="eecard__description">
               <div class="eecard__description-top" id="eecard__description-top">
                 <div class="eecard__description-top__timeline" id="eecard__description-top__timeline">${startMonth}, ${startYear}-${end === 'Present' ? 'Present' : `${end.month}, ${end.year}`}</div>

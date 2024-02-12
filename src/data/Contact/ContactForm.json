@@ -1,0 +1,42 @@
+{
+    "name": {
+        "label": "name",
+        "type": "text",
+        "placeholder": "your name",
+        "required": "required",
+        "element": "input"
+    },
+    "phone": {
+        "label": "phone",
+        "type": "tel",
+        "placeholder": "+91 123 456 7890",
+        "pattern": "\\+[0-9]{2} [0-9]{3} [0-9]{3} [0-9]{4}",
+        "element": "input"
+    },
+    "email": {
+        "label": "email",
+        "type": "email",
+        "placeholder": "example@email.com",
+        "required": "required",
+        "pattern": "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+        "element": "input"
+    },
+    "subject": {
+        "label": "subject",
+        "type": "text",
+        "placeholder": "Enter Subject Here",
+        "required": "required",
+        "element": "input"
+    },
+    "message": {
+        "label": "message",
+        "placeholder": "Enter your Message Here.",
+        "required": "required",
+        "element": "textarea"
+    },
+    "submit": {
+        "label": "submit",
+        "type": "submit",
+        "element": "button"
+    }
+}

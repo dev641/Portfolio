@@ -8,6 +8,8 @@ import { EducationController } from './EducationController'
 import { ResumeController } from './ResumeController'
 import { PortfolioSectionController } from './PortfolioSectionController'
 import { type ControlThemeType, type ThemeFinder } from '../types/util'
+import { ProfilesController } from './ProfilesController'
+import { ContactController } from './ContactController'
 export default class PortfolioController {
   private readonly Model: PortfolioModel
   private readonly View: PortfolioView
@@ -39,6 +41,13 @@ export default class PortfolioController {
       this.View.Home,
       this.themeFinder
     )
+
+    new ProfilesController(
+      this.Model.Profiles,
+      this.View.Profiles,
+      this.themeFinder
+    )
+
     new ExperienceController(
       this.Model.Experience,
       this.View.Experience,
@@ -57,6 +66,12 @@ export default class PortfolioController {
     new PortfolioSectionController(
       this.Model.PortfolioSection,
       this.View.PortfolioSection,
+      this.themeFinder
+    )
+
+    new ContactController(
+      this.Model.Contact,
+      this.View.Contact,
       this.themeFinder
     )
   }

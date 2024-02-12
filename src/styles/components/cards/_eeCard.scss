@@ -2,9 +2,18 @@
   grid-template-columns: 30% 50% 20%;
   justify-content: space-between;
   padding: size(space-xs);
-  &__img {
-    width: size(plg);
+  &__image {
+    overflow: hidden;
     border-radius: size(brxs);
+    width: size(plg);
+  }
+  &__img {
+    width: size(p2xl);
+    border-radius: size(brxs);
+    transition: transform 0.4s ease-in-out;
+    &:hover {
+      transform: scale(1.1) !important;
+    }
   }
 
   &__description {

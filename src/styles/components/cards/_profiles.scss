@@ -1,0 +1,33 @@
+#profiles-card {
+    @include flexHorizontal;
+
+    &__image {
+        margin: padding(skill-icons);
+        padding: padding(skill-icons);
+        border-radius: size(border-xl);
+        cursor: pointer;
+        transition: transform 0.1s ease-in-out;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.card {
+    &:hover {
+        @include disableHover;
+    }
+}
+.dark-card {
+    #profiles-card__image {
+        box-shadow: shadow(dark-primary),
+            shadow(dark-secondary);
+    }
+}
+
+.light-card {
+    #profiles-card__image {
+        box-shadow: shadow(light-primary),
+            shadow(light-secondary);
+    }
+}

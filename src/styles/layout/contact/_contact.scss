@@ -1,0 +1,108 @@
+#contact {
+    display: grid;
+
+    .contact-cards {
+        display: grid;
+        grid-template-columns: 4fr 5fr;
+    }
+
+    .card {
+        #contact-details__image {
+            overflow: hidden;
+            img {
+                transition: transform 0.4s ease-in-out;
+            }
+        }
+        &:hover {
+            @include disableHover;
+
+            color: color(text-light-secondary);
+            #contact-details__image {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+    .dark-card {
+        color: color(text-light-secondary);
+        #contact-details__heading, 
+        #contact-details__contact-info span {
+            color: color(text-light-primary);
+        }
+
+        .form-field {
+            input,
+            textarea {
+                background-color: color(dark-field);
+                border: 2px solid color(dark-field);
+                color: color(text-light-primary);
+                box-shadow: shadow(inner-shadows-p), shadow(inner-shadows-s);
+            }
+
+            button {
+                box-shadow: shadow(dark-primary), shadow(dark-secondary);
+                transition: all 0.4s ease-in-out;
+            }
+        }
+
+        .icon{
+            box-shadow: shadow(dark-primary),
+                    shadow(dark-secondary);
+        }
+
+        &:hover {
+            .form-field {
+                button {
+                    box-shadow: shadow(dark-primary), shadow(dark-secondary);
+                    &:hover {
+                        transform: translateY(-1rem);
+                    }
+                }
+            }
+        }
+    }
+
+    .light-card {
+        color: color(text-dark-secondary) !important;
+
+        #contact-details__heading,
+        #contact-details__contact-info span {
+            color: color(text-dark-primary) !important;
+        }
+
+        .form-field {
+
+            input,
+            textarea {
+                border: 2px solid color(light-field);
+                box-shadow: none;
+            }
+
+            button {
+                box-shadow: shadow(light-primary), shadow(light-secondary);
+                transition: all 0.4s ease-in-out;
+            }
+        }
+
+        .icon {
+            box-shadow: shadow(light-primary),
+                shadow(light-secondary);
+        }
+
+        &:hover {
+            .form-field {
+                
+                button {
+                    box-shadow: shadow(light-primary), shadow(light-secondary);
+                    &:hover {
+                        transform: translateY(-1rem);
+                        background-color: color(text-red-primary);
+                        color: color(text-light-heading);
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

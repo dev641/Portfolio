@@ -5,10 +5,10 @@ import eeCard from './components/cards/EECard'
 import sectionHeader from './components/cards/SectionHeader'
 import View from './view'
 
-const experienceGenerator: HtmlGenerator = ({ sectionHeader: sectionHeaderData, experience }: ExperienceData) => {
+const experienceGenerator: HtmlGenerator = ({ sectionHeader: sectionHeaderData, experience }: ExperienceData, theme) => {
   return `
      ${sectionHeader(sectionHeaderData)}
-     ${experience.map(exp => eeCard(exp)).join('')}
+     ${experience.map(exp => eeCard(exp, theme)).join('')}
     `
 }
 

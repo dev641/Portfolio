@@ -5,10 +5,10 @@ import eeCard from './components/cards/EECard'
 import sectionHeader from './components/cards/SectionHeader'
 import View from './view'
 
-const educationGenerator: HtmlGenerator = ({ sectionHeader: sectionHeaderData, education }: EducationData) => {
+const educationGenerator: HtmlGenerator = ({ sectionHeader: sectionHeaderData, education }: EducationData, theme) => {
   return `
      ${sectionHeader(sectionHeaderData)}
-     ${education.map(exp => eeCard(exp)).join('')}
+     ${education.map(exp => eeCard(exp, theme)).join('')}
     `
 }
 const componentClassNameGenerator: () => ComponentsClassName = () => {

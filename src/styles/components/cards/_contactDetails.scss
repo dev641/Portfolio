@@ -1,0 +1,60 @@
+#contact-details{
+    grid-template-rows: auto 1fr;
+    gap: 1rem;
+    &__image, &__image img {
+        border-radius: size(brxs);
+    }
+    
+    &__image {
+        height: 80%;
+        width: 100%;
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+    &__heading {
+        font-size: size(h5);
+        text-transform: capitalize;
+        transform: translateY(calc(size(space-md) * -1));
+    }
+
+    &__designation {
+        font-size: size(sm);
+        transform: translateY(calc(size(space-sm) * -1));
+        font-weight: 400;
+    }
+
+    &__summary {
+        font-size: size(sm);
+        font-weight: 400;
+        transform: translateY(calc(size(space-xs) * -1));
+    }
+
+    &__contact-info {
+        font-size: size(sm);
+        font-weight: 400;
+        transform: translateY(calc(size(space-xs) * -0.5));
+    }
+    &__social-media {
+        @include flexHorizontal;
+        
+        gap: size(space-sm);
+
+        &-heading {
+            text-transform: uppercase;
+            font-size: size(sm);
+            font-weight: 400;
+        }
+        &-item {
+            margin: padding(skill-icons) 0;
+            padding: padding(skill-icons);
+            border-radius: size(border-xl);
+            cursor: pointer;
+            transition: transform 0.1s ease-in-out;
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
