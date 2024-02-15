@@ -1,6 +1,6 @@
 // menu -> brand  right list
 
-import { type ThemeEnum } from '../util/Enum'
+import { ContactField, type ThemeEnum } from '../util/Enum'
 export type UpdateFileType = (path: string, key: string, value: string) => void
 
 export interface Item {
@@ -41,3 +41,7 @@ export interface classList { current: string, prev: string }
 export type HtmlUpdator = (name: T, theme?: ThemeType) => void
 
 export type ThemeFinder = () => ThemeType
+
+export type FieldType = ContactField
+
+export type InputHandler = (event: Event, type: ContactField, controlForm?: HtmlUpdator) => void
