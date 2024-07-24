@@ -44,4 +44,4 @@ export type ThemeFinder = () => ThemeType
 
 export type FieldType = ContactField
 
-export type InputHandler = (event: Event, type: ContactField, controlForm?: HtmlUpdator) => void
+export type InputHandler = (event: Event,controlForm?: HtmlUpdator, type?: ContactField) => void

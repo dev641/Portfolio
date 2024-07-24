@@ -1,3 +1,4 @@
+import { Autobind } from "../decorator/Utils";
 import { ContactModel } from "../model/ContactModel";
 import { ContactData } from "../types/Model";
 import { FieldType, ThemeFinder } from "../types/util";
@@ -10,51 +11,56 @@ export class ContactController extends Controller<ContactModel, ContactView, Con
     constructor (model: ContactModel, view: ContactView, themeFinder: ThemeFinder) {
         super(model, view, themeFinder)
 
-        this.View.initiateListener(this.controlForm.bind(this))
+        this.View.initiateListener(this.controlForm)
     }
 
-    controlName: (value: string, type: FieldType) => void = (value, type) => {
-
+    controlName(value: string): void {
+        this.Model.updateForm({value, type: ContactField.NAME})
     }
-    controlPhone: (value: string, type: FieldType) => void = (value, type) => {
-
-    }
-
-    controlEmail: (value: string, type: FieldType) => void = (value, type) => {
-
+    controlPhone(value: string): void {
+        this.Model.updateForm({value, type: ContactField.PHONE})
     }
 
-    controlSubject: (value: string, type: FieldType) => void = (value, type) => {
-
+    controlEmail(value: string): void {
+        this.Model.updateForm({value, type: ContactField.EMAIL})
     }
 
-    controlMessage: (value: string, type: FieldType) => void = (value, type) => {
-
+    controlSubject(value: string): void {
+        this.Model.updateForm({value, type: ContactField.SUBJECT})
     }
 
-    controlSubmit: (value: string, type: FieldType) => void = (value, type) => {
-
+    controlMessage(value: string): void {
+        this.Model.updateForm({value, type: ContactField.MESSAGE})
     }
-    controlForm: ({value, type}: {value: string, type: FieldType}) => void = ({value, type}) => {
+
+    controlSubmit(value: Object): void {
+        debugger
+       this.Model.updateForm({value, type: ContactField.SUBMIT})
+    }
+
+    @Autobind
+    controlForm({value, type}: {value: string, type: FieldType}): void {
+        debugger
         const {NAME, PHONE, EMAIL, SUBJECT, MESSAGE, SUBMIT} = ContactField
         switch (type) {
             case NAME:
-                this.controlName(value, type)
+                this.controlName(value)
                 break
             case PHONE:
-                this.controlPhone(value, type)
+                this.controlPhone(value)
                 break
             case EMAIL:
-                this.controlEmail(value, type)
+                this.controlEmail(value)
                 break
             case SUBJECT:
-                this.controlSubject(value, type)
+                this.controlSubject(value)
                 break
             case MESSAGE:
-                this.controlMessage(value, type)
+                this.controlMessage(value)
                 break
             case SUBMIT:
-                this.controlSubmit(value, type)
+                debugger
+                this.controlSubmit(value)
                 break
             default:
                 break

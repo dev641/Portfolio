@@ -10,5 +10,4 @@ const cvCard: render = ({ heading, download, contact }: CvCard, theme) => {
     </div>
   `
 }
-
 export default cvCard

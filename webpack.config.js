@@ -43,7 +43,7 @@ module.exports = {
       }
     ]
   },
-  target: 'node',
+  target: 'web',
   resolve: {
     extensions: ['.ts', '.js']
   },
